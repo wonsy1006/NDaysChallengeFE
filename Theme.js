@@ -1,11 +1,17 @@
-import styled from 'styled-components';
+import 'styled-components';
 
-const pixelToRem = (size) => `${size / 16}rem`;
+const fontFamilies = {
+  accent: 'NeoDunggeunmo Code',
+  main: 'NanumSquare',
+};
 
 const fontSizes = {
-  title: pixelToRem(60),
-  subtitle: pixelToRem(30),
-  paragraph: pixelToRem(18),
+  h2: '2rem',
+  h3: '1.5rem',
+  h4: '1rem',
+  normal: '1rem',
+  small: '0.75rem',
+  extraSmall: '0.5rem',
 };
 
 const colors = {
@@ -52,6 +58,7 @@ const common = {
 };
 
 const theme = {
+  fontFamilies,
   fontSizes,
   colors,
   common,

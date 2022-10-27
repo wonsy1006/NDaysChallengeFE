@@ -1,6 +1,10 @@
-import { createGlobalStyle, css } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
+import normalize from './node_modules/styled-normalize/index';
+import theme from './theme';
 
-const GlobalStyle = createGlobalStyle`
+export default createGlobalStyle`
+  ${normalize}
+
   *, *::before, *::after {
     box-sizing: border-box;
   }
@@ -20,7 +24,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     max-width: 400px;
     min-height: 100vh;
-
     background: #fffbf2;
   }
 
