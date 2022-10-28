@@ -41,6 +41,8 @@ const colors = {
   // Feedback colors
   rd: '#B51717',
   gr: '#10971E',
+  // Modal Background color
+  sh: 'rgba(49, 49, 49, 0.5)',
 };
 
 const common = {

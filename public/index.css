@@ -17,7 +17,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
   min-height: 100%;
-  color: #313131;
 }
 
 #root {
@@ -33,7 +32,6 @@ h1 {
 }
 
 a {
-  color: #313131;
   text-decoration: none;
 }
 

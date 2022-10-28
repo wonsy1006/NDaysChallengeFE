@@ -10,7 +10,7 @@ const Header = () => {
       <HeaderContainer>
         <Logo />
         <HeaderIcons>
-          <Add />
+          <Add style={{ marginRight: 0.5 + 'rem' }} />
           <Friends />
         </HeaderIcons>
       </HeaderContainer>
@@ -41,6 +41,9 @@ const HeaderIcons = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  & + & {
+    margin-right: 0.5rem;
+  }
 `;
 
 const Spacer = styled.div`

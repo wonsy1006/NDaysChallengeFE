@@ -35,3 +35,7 @@ const Icon = ({ type, hover, focus }) => {
 };
 
 export default Icon;
+
+// const IconTypes =
+
+// const IconSet = (type) => {};
