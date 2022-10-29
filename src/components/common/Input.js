@@ -26,7 +26,8 @@ const StyledInput = styled.input`
   padding: 0.75rem 1.25rem;
   width: 100%;
   &:focus {
-    border: 1px solid ${({ theme }) => theme.colors.bl500};
+    outline: none;
+    border: 1.5px solid ${({ theme }) => theme.colors.bl500};
     color: ${({ theme }) => theme.colors.bl500};
   }
 `;

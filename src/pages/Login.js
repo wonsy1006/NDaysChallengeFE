@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from '../components/common/Button';
 
@@ -50,7 +51,9 @@ const Login = () => {
         <Button sub>카카오로 로그인</Button>
       </ButtonContainer>
       <RegisterContainer>
-        <Register>회원가입</Register>
+        <Link to="/register">
+          <Register>회원가입</Register>
+        </Link>
       </RegisterContainer>
     </>
   );
@@ -82,6 +85,7 @@ const StyledInput = styled.input`
   padding: 0.75rem 1.25rem;
   width: 100%;
   &:focus {
+    outline: none;
     border: 1px solid ${({ theme }) => theme.colors.bl500};
     color: ${({ theme }) => theme.colors.bl500};
   }

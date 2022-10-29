@@ -1,17 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from '../../../node_modules/react-router-dom/dist/index';
 import Logo from '../../assets/images/logo.svg';
 import Add from '../../assets/icons/add.svg';
 import Friends from '../../assets/icons/friends.svg';
+import Alarm from '../../assets/icons/alarmFriends.svg';
 
 const Header = () => {
   return (
     <>
       <HeaderContainer>
-        <Logo />
+        <Link to="/">
+          <h1>
+            <Logo alt="엔챌" />
+          </h1>
+        </Link>
         <HeaderIcons>
-          <Add style={{ marginRight: 0.5 + 'rem' }} />
-          <Friends />
+          <Link to="/create-challenge">
+            <Add style={{ marginRight: 1 + 'rem' }} />
+          </Link>
+          <Link to="/friends-list">
+            <Alarm style={{ marginRight: 0.5 + 'rem' }} />
+          </Link>
         </HeaderIcons>
       </HeaderContainer>
       <Spacer />

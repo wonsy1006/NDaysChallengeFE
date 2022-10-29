@@ -11,24 +11,27 @@ import Mypage from '../../assets/icons/mypage.svg';
 
 const Navigation = () => {
   return (
-    <NavigationContainer>
-      <NavigationItem>
-        <Home />
-        <NavigationTitle>메인</NavigationTitle>
-      </NavigationItem>
-      <NavigationItem>
-        <Feed />
-        <NavigationTitle>오늘의 다짐</NavigationTitle>
-      </NavigationItem>
-      <NavigationItem>
-        <List />
-        <NavigationTitle>챌린지 목록</NavigationTitle>
-      </NavigationItem>
-      <NavigationItem>
-        <Mypage />
-        <NavigationTitle>내 정보</NavigationTitle>
-      </NavigationItem>
-    </NavigationContainer>
+    <>
+      <NavigationContainer>
+        <NavigationItem>
+          <Home />
+          <NavigationTitle>메인</NavigationTitle>
+        </NavigationItem>
+        <NavigationItem>
+          <Feed />
+          <NavigationTitle>오늘의 다짐</NavigationTitle>
+        </NavigationItem>
+        <NavigationItem>
+          <List />
+          <NavigationTitle>챌린지 목록</NavigationTitle>
+        </NavigationItem>
+        <NavigationItem>
+          <Mypage />
+          <NavigationTitle>내 정보</NavigationTitle>
+        </NavigationItem>
+      </NavigationContainer>
+      <Spacer />
+    </>
   );
 };
 
@@ -55,6 +58,10 @@ const NavigationItem = styled.div`
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+
+  &:nth-child(n) {
+    color: ${({ theme }) => theme.colors.gr500};
+  }
 `;
 
 const NavigationIcon = styled.div`
@@ -64,7 +71,10 @@ const NavigationIcon = styled.div`
 
 const NavigationTitle = styled.div`
   font-size: 0.8rem;
-  color: #313131;
   text-align: center;
   padding-top: 0.5rem;
+`;
+
+const Spacer = styled.div`
+  height: 6rem;
 `;
