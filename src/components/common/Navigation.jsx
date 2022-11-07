@@ -2,33 +2,43 @@ import React from 'react';
 import {
   useNavigate,
   useParams,
+  Link,
 } from '../../../node_modules/react-router-dom/dist/index';
 import styled from 'styled-components';
 import Home from '../../assets/icons/home.svg';
 import Feed from '../../assets/icons/feed.svg';
 import List from '../../assets/icons/list.svg';
+import Add from '../../assets/icons/add.svg';
 import Mypage from '../../assets/icons/mypage.svg';
 
 const Navigation = () => {
   return (
     <>
       <NavigationContainer>
-        <NavigationItem>
-          <Home />
-          <NavigationTitle>메인</NavigationTitle>
-        </NavigationItem>
-        <NavigationItem>
-          <Feed />
-          <NavigationTitle>오늘의 다짐</NavigationTitle>
-        </NavigationItem>
-        <NavigationItem>
-          <List />
-          <NavigationTitle>챌린지 목록</NavigationTitle>
-        </NavigationItem>
-        <NavigationItem>
-          <Mypage />
-          <NavigationTitle>내 정보</NavigationTitle>
-        </NavigationItem>
+        <Link to="/">
+          <NavigationItem>
+            <Home />
+            <NavigationTitle>메인</NavigationTitle>
+          </NavigationItem>
+        </Link>
+        <Link to="/feed">
+          <NavigationItem>
+            <Feed />
+            <NavigationTitle>오늘의 다짐</NavigationTitle>
+          </NavigationItem>
+        </Link>
+        <Link to="/challenge-list">
+          <NavigationItem>
+            <List />
+            <NavigationTitle>챌린지 목록</NavigationTitle>
+          </NavigationItem>
+        </Link>
+        <Link to="/mypage">
+          <NavigationItem>
+            <Mypage />
+            <NavigationTitle>내 정보</NavigationTitle>
+          </NavigationItem>
+        </Link>
       </NavigationContainer>
       <Spacer />
     </>

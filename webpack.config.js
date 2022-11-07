@@ -29,11 +29,11 @@ module.exports = {
     /** "port"
      * port of dev server
      */
-    port: '9500',
+    port: '3000',
     /** "static"
      * This property tells Webpack what static file it should serve
      */
-    static: ['./public'],
+    static: ['./src', './public'],
     /** "open"
      * opens the browser after server is successfully started
      */

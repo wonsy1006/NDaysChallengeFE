@@ -20,6 +20,7 @@ import MyPage from '../pages/MyPage';
 import Onboarding from '../pages/Onboarding';
 import Register from '../pages/Register';
 import Withdraw from '../pages/Withdraw';
+import Report from '../pages/Report';
 
 // 최초 방문 유저 판별
 // const FirstPage = ({ children }) => {
@@ -50,6 +51,7 @@ const Router = () => {
       <Route path="/mypage" element={<MyPage />} />
       <Route path="/register" element={<Register />} />
       <Route path="/withdraw" element={<Withdraw />} />
+      <Route path="/report" element={<Report />} />
     </Routes>
     // </BrowserRouter>
   );

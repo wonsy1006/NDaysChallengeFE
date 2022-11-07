@@ -16,9 +16,9 @@ const Header = () => {
           </h1>
         </Link>
         <HeaderIcons>
-          <Link to="/create-challenge">
+          {/* <Link to="/create-challenge">
             <Add style={{ marginRight: 1 + 'rem' }} />
-          </Link>
+          </Link> */}
           <Link to="/friends-list">
             <Alarm style={{ marginRight: 0.5 + 'rem' }} />
           </Link>

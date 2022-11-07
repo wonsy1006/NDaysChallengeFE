@@ -30,12 +30,4 @@ import Search from '../../assets/icons/Search.svg';
 import Twitter from '../../assets/icons/Twitter.svg';
 import Write from '../../assets/icons/Write.svg';
 
-const Icon = ({ type, hover, focus }) => {
-  return <Icon />;
-};
-
-export default Icon;
-
-// const IconTypes =
-
-// const IconSet = (type) => {};
+export const AddIcon = (props) => {};

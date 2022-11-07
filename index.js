@@ -7,12 +7,18 @@ import styled from 'styled-components';
 import { ThemeProvider } from 'styled-components';
 import theme from './theme';
 import GlobalStyle from './GlobalStyle';
+import store from './src/app/store';
+import { Provider } from './node_modules/react-redux/es/exports';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ThemeProvider theme={theme}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </ThemeProvider>,
+  <React.StrictMode>
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </ThemeProvider>
+  </React.StrictMode>,
 );
