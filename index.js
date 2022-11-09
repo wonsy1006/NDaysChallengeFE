@@ -6,7 +6,7 @@ import { BrowserRouter } from './node_modules/react-router-dom/dist/index';
 import styled from 'styled-components';
 import { ThemeProvider } from 'styled-components';
 import theme from './theme';
-import GlobalStyle from './GlobalStyle';
+// import GlobalStyle from './GlobalStyle';
 import store from './src/app/store';
 import { Provider } from './node_modules/react-redux/es/exports';
 

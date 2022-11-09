@@ -25,6 +25,9 @@ const MyPage = () => {
           <StyledH3>계정 삭제</StyledH3>
         </Link>
       </PagesContainer>
+      <LogoutContainer>
+        <StyledLink>로그아웃</StyledLink>
+      </LogoutContainer>
     </>
   );
 };
@@ -61,7 +64,7 @@ const PagesContainer = styled.div`
   flex-direction: column;
 
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto 1.5rem auto;
 
   & + & {
     margin: 1rem;
@@ -73,4 +76,15 @@ const StyledH3 = styled.h3`
 
   &:hover {
   }
+`;
+
+const LogoutContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const StyledLink = styled.a`
+  color: ${({ theme }) => theme.colors.bl500};
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.bl500};
 `;

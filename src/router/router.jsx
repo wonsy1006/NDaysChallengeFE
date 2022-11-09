@@ -21,6 +21,7 @@ import Onboarding from '../pages/Onboarding';
 import Register from '../pages/Register';
 import Withdraw from '../pages/Withdraw';
 import Report from '../pages/Report';
+import GroupChallenge from '../pages/GroupChallenge';
 
 // 최초 방문 유저 판별
 // const FirstPage = ({ children }) => {
@@ -48,6 +49,7 @@ const Router = () => {
       <Route path="/*" element={<ErrorPage />} />
       <Route path="/feed" element={<Feed />} />
       <Route path="/friends-list" element={<FriendsList />} />
+      <Route path="/group-challenge" element={<GroupChallenge />} />
       <Route path="/mypage" element={<MyPage />} />
       <Route path="/register" element={<Register />} />
       <Route path="/withdraw" element={<Withdraw />} />
