@@ -19,26 +19,36 @@ import Main from '../pages/Main';
 import MyPage from '../pages/MyPage';
 import Onboarding from '../pages/Onboarding';
 import Register from '../pages/Register';
+import Welcome from '../pages/Welcome';
 import Withdraw from '../pages/Withdraw';
 import Report from '../pages/Report';
 import GroupChallenge from '../pages/GroupChallenge';
 
 // 최초 방문 유저 판별
-// const FirstPage = ({ children }) => {
-//   if (
-//     window.localStorage.getItem("firstEnter") === null &&
-//     window.localStorage.getItem("token") === null
-//   ) {
-//     return <Navigate to="/onboarding" />;
-//   }
-//   return children;
-// };
+const FirstPage = ({ children }) => {
+  if (
+    window.localStorage.getItem('firstAccess') === null &&
+    window.localStorage.getItem('token') === null
+  ) {
+    return <Navigate to="/welcome" />;
+  }
+  return children;
+};
+
+// 챌린지 보유 유저 판별
 
 const Router = () => {
   return (
     // <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Main />} />
+      <Route
+        path="/"
+        element={
+          <FirstPage>
+            <Main />
+          </FirstPage>
+        }
+      />
       <Route path="/onboarding" element={<Onboarding />} />
       <Route path="/challenge-list" element={<ChallengeList />} />
       <Route path="/login" element={<Login />} />
@@ -52,6 +62,7 @@ const Router = () => {
       <Route path="/group-challenge" element={<GroupChallenge />} />
       <Route path="/mypage" element={<MyPage />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/welcome" element={<Welcome />} />
       <Route path="/withdraw" element={<Withdraw />} />
       <Route path="/report" element={<Report />} />
     </Routes>

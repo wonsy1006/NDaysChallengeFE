@@ -13,10 +13,12 @@ const LayoutContainer = styled.div`
   flex-direction: column;
   position: relative;
 
+  min-width: 360px;
   max-width: 480px;
-  min-height: 100vh;
+  min-height: 100vmax;
+  margin: auto;
 
   @media screen and (max-width: 480px) {
-    width: 360px;
+    width: 100%;
   }
 `;

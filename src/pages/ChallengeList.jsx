@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Pic1 from '../assets/images/profile_pics/pic1.svg';
 import Card from '../components/common/Card';
+import Tag from '../components/common/Tag';
 import { Link } from '../../node_modules/react-router-dom/dist/index';
 
 const ChallengeList = () => {
@@ -18,6 +19,9 @@ const ChallengeList = () => {
         <IndividualContainer>
           <StyledH3>개인 챌린지</StyledH3>
           <Card>
+            <TagContainer>
+              <Tag routine>규칙적인 생활</Tag>
+            </TagContainer>
             <ChallengeTitle>챌린지 이름을 입력하세요</ChallengeTitle>
             <RightContainer>
               <ChallengePeriod>2022.11.08 - 2022.11.30</ChallengePeriod>
@@ -107,6 +111,13 @@ const GroupContainer = styled.div``;
 
 const StyledH3 = styled.h3`
   margin-left: 1.2rem;
+`;
+
+const TagContainer = styled.div`
+  display: flex;
+  justify-content: start;
+  width: 95%;
+  margin: 0 auto;
 `;
 
 const ChallengeTitle = styled.p`

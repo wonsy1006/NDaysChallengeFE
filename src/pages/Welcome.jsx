@@ -1,32 +1,44 @@
 import React from 'react';
+import { useNavigate } from '../../node_modules/react-router-dom/dist/index';
 import styled from 'styled-components';
+import Button from '../components/common/Button';
 
 const Welcome = () => {
+  const navigate = useNavigate();
+
+  const directToMain = () => {
+    window.localStorage.setItem('firstAccess', true);
+    navigate('/');
+  };
+
   return (
-    <div>
+    <>
       <h2>
-        <waveSpan className="n">N</waveSpan>
-        <waveSpan className="days">D</waveSpan>
-        <waveSpan className="days">a</waveSpan>
-        <waveSpan className="days">y</waveSpan>
-        <waveSpan className="days">s</waveSpan>
-        <waveSpan className="challenge">C</waveSpan>
-        <waveSpan className="challenge">h</waveSpan>
-        <waveSpan className="challenge">a</waveSpan>
-        <waveSpan className="challenge">l</waveSpan>
-        <waveSpan className="challenge">l</waveSpan>
-        <waveSpan className="challenge">e</waveSpan>
-        <waveSpan className="challenge">n</waveSpan>
-        <waveSpan className="challenge">g</waveSpan>
-        <waveSpan className="challenge">e</waveSpan>
+        <WaveSpan className="n">N</WaveSpan>
+        <WaveSpan className="days">D</WaveSpan>
+        <WaveSpan className="days">a</WaveSpan>
+        <WaveSpan className="days">y</WaveSpan>
+        <WaveSpan className="days">s</WaveSpan>
+        <WaveSpan className="challenge">C</WaveSpan>
+        <WaveSpan className="challenge">h</WaveSpan>
+        <WaveSpan className="challenge">a</WaveSpan>
+        <WaveSpan className="challenge">l</WaveSpan>
+        <WaveSpan className="challenge">l</WaveSpan>
+        <WaveSpan className="challenge">e</WaveSpan>
+        <WaveSpan className="challenge">n</WaveSpan>
+        <WaveSpan className="challenge">g</WaveSpan>
+        <WaveSpan className="challenge">e</WaveSpan>
       </h2>
-    </div>
+      <Button primary onClick={directToMain}>
+        시작하기
+      </Button>
+    </>
   );
 };
 
 export default Welcome;
 
-const waveSpan = styled.span`
+const WaveSpan = styled.span`
   position: relative;
   display: inline-block;
   text-transform: uppercase;

@@ -2,9 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from '../../../node_modules/react-router-dom/dist/index';
 import Logo from '../../assets/images/logo.svg';
-import Add from '../../assets/icons/add.svg';
-import Friends from '../../assets/icons/friends.svg';
-import Alarm from '../../assets/icons/alarmFriends.svg';
+
+import { FriendIcon } from './Icons';
 
 const Header = () => {
   return (
@@ -20,7 +19,7 @@ const Header = () => {
             <Add style={{ marginRight: 1 + 'rem' }} />
           </Link> */}
           <Link to="/friends-list">
-            <Alarm style={{ marginRight: 0.5 + 'rem' }} />
+            <FriendIcon size={24} />
           </Link>
         </HeaderIcons>
       </HeaderContainer>
@@ -38,12 +37,23 @@ const HeaderContainer = styled.div`
   align-items: center;
   position: fixed;
   top: 0;
-  width: 480px;
-  height: 5rem;
-  padding: 20px 15px;
-  gap: 49px;
+
+  min-width: 360px;
+  max-width: 480px;
+  height: 8rem;
+  padding: 2.4rem 1.6rem;
+  margin-bottom: 1.6rem;
+  z-index: 1000;
 
   background-color: #fffbf2;
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 480px) {
+    width: 100%;
+  }
 `;
 
 const HeaderIcons = styled.div`
@@ -51,11 +61,9 @@ const HeaderIcons = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  & + & {
-    margin-right: 0.5rem;
-  }
+  margin-right: 1rem;
 `;
 
 const Spacer = styled.div`
-  height: 5rem;
+  height: 8rem;
 `;

@@ -6,7 +6,7 @@ import Button from '../components/common/Button';
 const ErrorPage = () => {
   return (
     <>
-      <PageTitle>ERROR</PageTitle>
+      <PageTitle>ERROR!!</PageTitle>
       <Styled404>
         <SpanBlue>4</SpanBlue>
         <SpanYellow>0</SpanYellow>
@@ -25,8 +25,8 @@ const ErrorPage = () => {
 export default ErrorPage;
 
 const PageTitle = styled.h2`
-  font-family: ${({ theme }) => theme.fontFamilies.accent};
-  font-size: 2rem;
+  font-family: ${({ theme }) => theme.fonts.family.accent};
+  font-size: 3.2rem;
   color: ${({ theme }) => theme.colors.bl500};
   text-align: center;
 `;
@@ -36,23 +36,24 @@ const Styled404 = styled.p`
   flex-direction: row;
   justify-content: center;
   flex-wrap: nowrap;
+  margin-bottom: 3.2rem;
 `;
 
 const SpanBlue = styled.span`
-  font-family: ${({ theme }) => theme.fontFamilies.accent};
-  font-size: 5rem;
+  font-family: ${({ theme }) => theme.fonts.family.accent};
+  font-size: 8rem;
   color: ${({ theme }) => theme.colors.bl500};
 `;
 
 const SpanYellow = styled.span`
-  font-family: ${({ theme }) => theme.fontFamilies.accent};
-  font-size: 5rem;
+  font-family: ${({ theme }) => theme.fonts.family.accent};
+  font-size: 8rem;
   color: ${({ theme }) => theme.colors.ye500};
 `;
 
 const StyledP = styled.p`
-  font-family: ${({ theme }) => theme.fontFamilies.main};
-  font-size: 1.5rem;
+  font-family: ${({ theme }) => theme.fonts.family.main};
+  font-size: 1.6rem;
   text-align: center;
 `;
 

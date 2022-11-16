@@ -26,7 +26,7 @@ const EditProfile = () => {
 
   return (
     <>
-      <PageTitle>회원 정보 수정</PageTitle>
+      <h2>회원 정보 수정</h2>
       <StyledForm>
         <StyledDiv>
           <StyledLabel>이메일</StyledLabel>
@@ -89,11 +89,6 @@ const EditProfile = () => {
 };
 
 export default EditProfile;
-
-const PageTitle = styled.h2`
-  text-align: center;
-  margin-bottom: 2rem;
-`;
 
 const StyledForm = styled.form`
   display: flex;

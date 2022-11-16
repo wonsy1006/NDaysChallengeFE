@@ -1,17 +1,36 @@
-import 'styled-components';
-
-const fontFamilies = {
-  accent: 'NeoDunggeunmo Code',
-  main: 'NanumSquare',
+const margins = {
+  sm: '1rem',
+  base: '1.6rem',
+  lg: '3.2rem',
+  xl: '4.8rem',
 };
 
-const fontSizes = {
-  h2: '2rem',
-  h3: '1.5rem',
-  h4: '1rem',
-  normal: '1rem',
-  small: '0.75rem',
-  extraSmall: '0.5rem',
+const paddings = {
+  sm: '1rem',
+  base: '1.6rem',
+  lg: '3.2rem',
+  xl: '4.8rem',
+};
+
+const fonts = {
+  family: {
+    accent: 'NeoDunggeunmo Code',
+    main: 'NanumSquare',
+  },
+  size: {
+    h2: '2.2rem',
+    h3: '2.0rem',
+    h4: '1.8rem',
+    normal: '1.6rem',
+    small: '1.2rem',
+    extraSmall: '.8rem',
+  },
+  weight: {
+    light: 100,
+    normal: 400,
+    semibold: 500,
+    bold: 700,
+  },
 };
 
 const colors = {
@@ -45,25 +64,11 @@ const colors = {
   sh: 'rgba(49, 49, 49, 0.5)',
 };
 
-const common = {
-  flexCenter: `
-    display: flex,
-    justify-contents: center;
-    align-items: center;
-  `,
-  flexCenterColumn: `
-    display: flex,
-    flex-direction: column;
-    justify-contents: center;
-    align-items: center;
-  `,
-};
-
 const theme = {
-  fontFamilies,
-  fontSizes,
+  margins,
+  paddings,
   colors,
-  common,
+  fonts,
 };
 
 export default theme;

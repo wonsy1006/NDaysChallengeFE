@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Button from '../components/common/Button';
+import Question from '../assets/icons/question.svg';
+import { todayDate } from '../utils/Date';
 
 const CreateChallenge = () => {
   const [challengeData, setChallengeData] = useState({
@@ -21,7 +23,7 @@ const CreateChallenge = () => {
 
   return (
     <>
-      <PageTitle>챌린지 만들기</PageTitle>
+      <h2>챌린지 만들기</h2>
       <StyledForm>
         <StyledDiv>
           <StyledLabel>챌린지 이름</StyledLabel>
@@ -74,9 +76,34 @@ const CreateChallenge = () => {
           </RadioContainer>
         </StyledDiv>
         <StyledDiv>
-          <StyledLabel>패스 횟수</StyledLabel>
+          <StyledLabel>시작일 선택</StyledLabel>
+          <StyledInput
+            type="date"
+            placeholder={todayDate}
+            onChange={onChange}
+          />
+        </StyledDiv>
+
+        {/* 설정 / 미설정 선택에 따라 number input 표시하기 / 가리기 */}
+        {/* 양의 정수 이외의 value는 입력 못 하게 하기 */}
+        <StyledDiv>
+          <StyledLabel>
+            패스 횟수
+            <Question />
+          </StyledLabel>
+          <RadioContainer>
+            <RadioLabel>
+              <input type="radio" name="pass" /> 설정
+            </RadioLabel>
+            <RadioLabel>
+              <input type="radio" name="pass" /> 미설정
+            </RadioLabel>
+          </RadioContainer>
           <StyledInput type="number" onChange={onChange} />
         </StyledDiv>
+
+        {/* 설정 / 미설정 선택에 따라 text input 표시하기 / 가리기 */}
+        {/* 보상 설정 제한 텍스트 길이 넘어갈 경우 에러 메세지 표시 */}
         <StyledDiv>
           <StyledLabel>보상 설정</StyledLabel>
           <StyledInput type="text" onChange={onChange} />
@@ -91,11 +118,6 @@ const CreateChallenge = () => {
 
 export default CreateChallenge;
 
-const PageTitle = styled.h2`
-  text-align: center;
-  margin-bottom: 2rem;
-`;
-
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -105,26 +127,28 @@ const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
   width: 90%;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 2.4rem;
 `;
 
 const StyledInput = styled.input`
-  font-size: 1rem;
+  font-size: 1.6rem;
   border: 1px solid ${({ theme }) => theme.colors.gr300};
   border-radius: 3rem;
-  padding: 0.75rem 1.25rem;
+  padding: 1.2rem 2rem;
   width: 100%;
   &:focus {
     outline: none;
     border: 1px solid ${({ theme }) => theme.colors.bl500};
-    color: ${({ theme }) => theme.colors.bl500};
+    color: ${({ theme }) => theme.colors.gr500};
+  }
+  &[type='date'] {
+    font-family: ${({ theme }) => theme.fonts.family.main};
   }
 `;
 
 const StyledLabel = styled.label`
-  font-size: 1rem;
   width: 100%;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   text-align: left;
 `;
 
@@ -139,7 +163,7 @@ const ButtonContainer = styled.div`
 const StyledSelect = styled.select`
   width: 100%;
   height: 44.5px;
-  font-size: 1rem;
+  font-size: 1.6rem;
   padding: 0.75rem 1.25rem;
   border: 1px solid ${({ theme }) => theme.colors.gr300};
   border-radius: 3rem;
@@ -154,6 +178,9 @@ const StyledSelect = styled.select`
 const RadioContainer = styled.div`
   display: flex;
   flex-direction: row;
+  padding: 1rem;
+  border: 1px solid ${({ theme }) => theme.colors.bl500};
+  border-radius: 1rem;
 `;
 
 const RadioLabel = styled.label`

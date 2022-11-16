@@ -13,16 +13,16 @@ const MyPage = () => {
       </UserNameContainer>
       <PagesContainer>
         <Link to="/challenge-list">
-          <StyledH3>완료된 챌린지 보기</StyledH3>
+          <h3>완료된 챌린지 보기</h3>
         </Link>
         <Link to="/edit-profile">
-          <StyledH3>회원 정보 수정</StyledH3>
+          <h3>회원 정보 수정</h3>
         </Link>
         <Link to="/friends-list">
-          <StyledH3>친구 목록</StyledH3>
+          <h3>친구 목록</h3>
         </Link>
         <Link to="/withdraw">
-          <StyledH3>계정 삭제</StyledH3>
+          <h3>계정 삭제</h3>
         </Link>
       </PagesContainer>
       <LogoutContainer>
@@ -68,13 +68,6 @@ const PagesContainer = styled.div`
 
   & + & {
     margin: 1rem;
-  }
-`;
-
-const StyledH3 = styled.h3`
-  font-size: 1.25rem;
-
-  &:hover {
   }
 `;
 

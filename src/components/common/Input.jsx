@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Input = () => {
+export const Input = () => {
   return (
     <StyledDiv>
       <StyledLabel>비밀번호</StyledLabel>
@@ -10,7 +10,7 @@ const Input = () => {
   );
 };
 
-export default Input;
+export const SearchInput = () => {};
 
 const StyledDiv = styled.div`
   display: flex;

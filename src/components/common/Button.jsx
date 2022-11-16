@@ -1,24 +1,27 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+const Button = (props) => <StyledButton {...props} />;
+
+export default Button;
+
 const StyledButton = styled.button`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 
-  margin: 1rem;
-  gap: 1rem;
+  margin: 1.6rem;
+  gap: 1.6rem;
   border: 0;
   cursor: pointer;
 
-  font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 0.05rem;
   color: #fff;
 
-  width: 12rem;
-  height: 3rem;
+  width: 19.2rem;
+  height: 4.8rem;
 
   /* background: ${({ theme }) => theme.colors.bl500};
   &:hover {
@@ -32,6 +35,22 @@ const StyledButton = styled.button`
       background: ${({ theme }) => theme.colors.bl500};
       padding: 1.4rem 1.6rem;
       border-radius: 3rem;
+      font-size: ${({ theme }) => theme.fonts.size.normal};
+      &:hover {
+        background: #2e73ac;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+      }
+    `}
+
+  ${(props) =>
+    props.small &&
+    css`
+      background: ${({ theme }) => theme.colors.bl500};
+      padding: 1rem 1.2rem;
+      border-radius: 3rem;
+      font-size: 0.8rem;
+      width: 6rem;
+      height: 1.5rem;
       &:hover {
         background: #2e73ac;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
@@ -44,6 +63,7 @@ const StyledButton = styled.button`
       background: ${({ theme }) => theme.colors.ye500};
       padding: 1.4rem 1.6rem;
       border-radius: 3rem;
+      font-size: 1.1rem;
       &:hover {
         background: #eab12c;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
@@ -86,7 +106,3 @@ const StyledButton = styled.button`
       }
     `}
 `;
-
-const Button = (props) => <StyledButton {...props} />;
-
-export default Button;

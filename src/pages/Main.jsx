@@ -6,20 +6,23 @@ import Input from '../components/common/Input';
 import Card from '../components/common/Card';
 import Pic1 from '../assets/images/profile_pics/pic1.svg';
 import NoChallenge from '../assets/images/noChallenge.svg';
+import Checkbox from '../components/common/Checkbox';
+import Tag from '../components/common/Tag';
+import { AddIcon } from '../components/common/Icons';
 
 const Main = () => {
   return (
     <div>
       <UserNameContainer>
         <Pic1 />
-        <StyledSpan>username 님</StyledSpan>
+        <StyledSpan>OOOOO 님</StyledSpan>
         <span>의 챌린지</span>
       </UserNameContainer>
       <Card>
         <NoChallenge></NoChallenge>
         <StyledText>
           아직 챌린지를 만들지 않으셨군요? <br />
-          새로운 챌린지를 만들어 보세요
+          새로운 챌린지를 만들어 보세요!
         </StyledText>
         <ButtonContainer>
           <Link to="/create-challenge">
@@ -31,6 +34,10 @@ const Main = () => {
       <Link to="/register">회원가입</Link>
       <Link to="/report">신고하기</Link>
       <Link to="/fdwerw">에러 페이지</Link>
+      <Link to="/welcome">웰컴</Link>
+      {/* <Checkbox label="체크박스 스타일링"></Checkbox>
+      <Tag>규칙적인 생활</Tag> */}
+      <AddIcon></AddIcon>
     </div>
   );
 };
@@ -47,7 +54,6 @@ const ButtonContainer = styled.div`
 const StyledText = styled.p`
   margin: 1rem auto 0.5rem auto;
   font-weight: 500;
-  font-size: 1rem;
   line-height: 1.5;
   text-align: center;
 `;
