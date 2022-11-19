@@ -46,11 +46,11 @@ const StyledButton = styled.button`
     props.small &&
     css`
       background: ${({ theme }) => theme.colors.bl500};
-      padding: 1rem 1.2rem;
-      border-radius: 3rem;
-      font-size: 0.8rem;
-      width: 6rem;
-      height: 1.5rem;
+      padding: 1.6rem 1.92rem;
+      border-radius: 4.8rem;
+      font-size: ${({ theme }) => theme.fonts.size.small};
+      width: 9.6rem;
+      height: 2.4rem;
       &:hover {
         background: #2e73ac;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
@@ -63,7 +63,7 @@ const StyledButton = styled.button`
       background: ${({ theme }) => theme.colors.ye500};
       padding: 1.4rem 1.6rem;
       border-radius: 3rem;
-      font-size: 1.1rem;
+      font-size: ${({ theme }) => theme.fonts.size.normal};
       &:hover {
         background: #eab12c;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
@@ -73,14 +73,14 @@ const StyledButton = styled.button`
   ${(props) =>
     props.accept &&
     css`
-      padding: 0.5rem 1rem;
-      width: 10rem;
-      height: 2.5rem;
+      padding: 0.8rem 1.6rem;
+      width: 16rem;
+      height: 4rem;
       border: 1px solid ${({ theme }) => theme.colors.gr};
-      border-radius: 0.5rem;
+      border-radius: 0.8rem;
       background: transparent;
       color: ${({ theme }) => theme.colors.gr};
-      font-size: 1rem;
+      font-size: ${({ theme }) => theme.fonts.size.small};
       &:hover {
         background: ${({ theme }) => theme.colors.gr};
         color: ${({ theme }) => theme.colors.gr000};
@@ -91,14 +91,14 @@ const StyledButton = styled.button`
     ${(props) =>
     props.refuse &&
     css`
-      padding: 0.5rem 1rem;
-      width: 10rem;
-      height: 2.5rem;
+      padding: 0.8rem 1.6rem;
+      width: 16rem;
+      height: 4rem;
       border: 1px solid ${({ theme }) => theme.colors.rd};
-      border-radius: 0.5rem;
+      border-radius: 0.8rem;
       background: transparent;
       color: ${({ theme }) => theme.colors.rd};
-      font-size: 1rem;
+      font-size: ${({ theme }) => theme.fonts.size.small};
       &:hover {
         background: ${({ theme }) => theme.colors.rd};
         color: ${({ theme }) => theme.colors.gr000};

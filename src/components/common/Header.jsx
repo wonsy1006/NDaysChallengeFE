@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import { Link } from '../../../node_modules/react-router-dom/dist/index';
 import Logo from '../../assets/images/logo.svg';
 
-import { FriendIcon } from './Icons';
+import { FriendIcon } from './Icon';
+
+// 친구 요청 있을 시, 아이콘 바꾸기
 
 const Header = () => {
   return (

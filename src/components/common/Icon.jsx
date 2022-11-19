@@ -12,8 +12,8 @@ export const AddIcon = ({ size = 48, color = '#0B62AA' }) => {
       <path
         d="M24 40V24M24 24V8M24 24H40M24 24H8"
         stroke={color}
-        stroke-width="4"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeLinecap="round"
       />
     </svg>
   );
@@ -116,16 +116,16 @@ export const CalendarIcon = ({ size = 48, color = '#0B62AA' }) => {
       <path
         d="M36 8H12C7.58172 8 4 11.5817 4 16V36C4 40.4183 7.58172 44 12 44H36C40.4183 44 44 40.4183 44 36V16C44 11.5817 40.4183 8 36 8Z"
         stroke={color}
-        stroke-width="4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M16 4V12M32 4V12M4 20H44"
         stroke={color}
-        stroke-width="4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -434,15 +434,15 @@ export const ReportIcon = ({ size = 48, color = '#0B62AA' }) => {
       <path
         d="M36 35H12V21C12 14.373 17.373 9 24 9C30.627 9 36 14.373 36 21V35Z"
         stroke={color}
-        stroke-width="4"
-        stroke-linejoin="round"
+        strokeWidth="4"
+        strokeLinejoin="round"
       />
       <path
         d="M8 42H40M4 13L7 14M13 4L14 7M10 10L7 7"
         stroke={color}
-        stroke-width="4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -453,23 +453,23 @@ export const SearchIcon = ({ size = 48, color = '#0B62AA' }) => {
     <svg
       width={size}
       height={size}
-      viewBox="0 0 48 48"
+      viewBox="0 0 48 54"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M33.75 33.75L42.75 42.75"
         stroke={color}
-        stroke-width="4.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="4.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M22.5 36.75C30.3701 36.75 36.75 30.3701 36.75 22.5C36.75 14.6299 30.3701 8.25 22.5 8.25C14.6299 8.25 8.25 14.6299 8.25 22.5C8.25 30.3701 14.6299 36.75 22.5 36.75Z"
         stroke={color}
-        stroke-width="4.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="4.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -504,9 +504,9 @@ export const WriteIcon = ({ size = 48, color = '#0B62AA' }) => {
       <path
         d="M27 15L33 21M8 40V33L30.586 10.414C30.9611 10.0391 31.4697 9.82843 32 9.82843C32.5303 9.82843 33.0389 10.0391 33.414 10.414L37.586 14.586C37.9609 14.9611 38.1716 15.4697 38.1716 16C38.1716 16.5303 37.9609 17.0389 37.586 17.414L15 40H8Z"
         stroke={color}
-        stroke-width="4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

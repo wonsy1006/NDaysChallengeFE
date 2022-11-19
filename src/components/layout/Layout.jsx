@@ -15,7 +15,7 @@ const LayoutContainer = styled.div`
 
   min-width: 360px;
   max-width: 480px;
-  min-height: 100vmax;
+  min-height: 100vh;
   margin: auto;
 
   @media screen and (max-width: 480px) {

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Button from '../components/common/Button';
-import Question from '../assets/icons/question.svg';
+import { QuestionIcon } from '../components/common/Icon';
 import { todayDate } from '../utils/Date';
 
 const CreateChallenge = () => {
   const [challengeData, setChallengeData] = useState({
+    type: '',
     title: '',
     category: '',
     period: '',
@@ -26,6 +27,30 @@ const CreateChallenge = () => {
       <h2>챌린지 만들기</h2>
       <StyledForm>
         <StyledDiv>
+          <StyledLabel>챌린지 유형</StyledLabel>
+          <RadioContainer>
+            <RadioLabel>
+              <input
+                type="radio"
+                name="period"
+                checked
+                value="individual"
+                onChange={onChange}
+              />
+              개인
+            </RadioLabel>
+            <RadioLabel>
+              <input
+                type="radio"
+                name="period"
+                value="group"
+                onChange={onChange}
+              />
+              단체
+            </RadioLabel>
+          </RadioContainer>
+        </StyledDiv>
+        <StyledDiv>
           <StyledLabel>챌린지 이름</StyledLabel>
           <StyledInput
             type="text"
@@ -40,6 +65,7 @@ const CreateChallenge = () => {
             <option value="workout">운동</option>
             <option value="hobby">취미</option>
             <option value="mental">멘탈케어</option>
+            <option value="mental">기타</option>
           </StyledSelect>
         </StyledDiv>
         <StyledDiv>
@@ -89,7 +115,7 @@ const CreateChallenge = () => {
         <StyledDiv>
           <StyledLabel>
             패스 횟수
-            <Question />
+            <QuestionIcon size={20} />
           </StyledLabel>
           <RadioContainer>
             <RadioLabel>

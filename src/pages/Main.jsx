@@ -2,13 +2,15 @@ import React from 'react';
 import { Link } from '../../node_modules/react-router-dom/dist/index';
 import styled from 'styled-components';
 import Button from '../components/common/Button';
-import Input from '../components/common/Input';
 import Card from '../components/common/Card';
 import Pic1 from '../assets/images/profile_pics/pic1.svg';
 import NoChallenge from '../assets/images/noChallenge.svg';
 import Checkbox from '../components/common/Checkbox';
 import Tag from '../components/common/Tag';
-import { AddIcon } from '../components/common/Icons';
+import { SearchInput, EnterInput } from '../components/common/Input';
+import { InputLabel } from '../components/common/Input';
+
+const onChange = () => {};
 
 const Main = () => {
   return (
@@ -37,7 +39,9 @@ const Main = () => {
       <Link to="/welcome">웰컴</Link>
       {/* <Checkbox label="체크박스 스타일링"></Checkbox>
       <Tag>규칙적인 생활</Tag> */}
-      <AddIcon></AddIcon>
+      <InputLabel type="비밀번호" />
+      <SearchInput />
+      <EnterInput />
     </div>
   );
 };

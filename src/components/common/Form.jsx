@@ -7,4 +7,7 @@ const FormContainer = () => {
 
 export default FormContainer;
 
-const StyledForm = styled.form``;
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+`;

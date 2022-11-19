@@ -15,10 +15,12 @@ const ModalBackground = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 0;
   max-width: 480px;
   height: 100vh;
   background: rgba(49, 49, 49, 0.49);
-  z-index: 100;
+  z-index: 500;
 `;
 
 const ModalContainer = styled.div`

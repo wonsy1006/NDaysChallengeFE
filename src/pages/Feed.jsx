@@ -13,6 +13,8 @@ const countHeart = () => {};
 // 댓글 아이콘 클릭 시 댓글 작성 영역 표시
 const showCommentForm = () => {};
 
+// 무한 스크롤
+
 const Feed = () => {
   const [comment, setComment] = useState('');
 

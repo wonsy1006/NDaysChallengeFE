@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from '../components/common/Button';
+import LoginForm from '../components/features/login/LoginForm';
 
 const Login = () => {
   const [userData, setUserData] = useState({
@@ -20,8 +21,8 @@ const Login = () => {
 
   return (
     <>
-      <PageTitle>로그인</PageTitle>
-      <StyledForm>
+      <h2>로그인</h2>
+      {/* <StyledForm>
         <StyledDiv>
           <StyledLabel>이메일</StyledLabel>
           <StyledInput
@@ -45,7 +46,8 @@ const Login = () => {
         <ButtonContainer>
           <Button primary>로그인</Button>
         </ButtonContainer>
-      </StyledForm>
+      </StyledForm> */}
+      <LoginForm />
       <StyledP>또는</StyledP>
       <ButtonContainer>
         <Button sub>카카오로 로그인</Button>
@@ -60,11 +62,6 @@ const Login = () => {
 };
 
 export default Login;
-
-const PageTitle = styled.h2`
-  text-align: center;
-  margin-bottom: 2rem;
-`;
 
 const StyledForm = styled.form`
   display: flex;

@@ -2,14 +2,14 @@ import React from 'react';
 import {
   useNavigate,
   useParams,
-  Link,
+  NavLink,
 } from '../../../node_modules/react-router-dom/dist/index';
 import styled from 'styled-components';
 import theme from '../../styles/Theme';
-import { ListIcon } from './Icons';
-import { AddIcon } from './Icons';
-import { FeedIcon } from './Icons';
-import { MyPageIcon } from './Icons';
+import { ListIcon } from './Icon';
+import { AddIcon } from './Icon';
+import { FeedIcon } from './Icon';
+import { MyPageIcon } from './Icon';
 
 // 네비게이션 페이지 활성화 시 아이콘/텍스트 메인컬러로 표시하기
 
@@ -17,30 +17,30 @@ const Navigation = () => {
   return (
     <>
       <NavigationContainer>
-        <Link to="/">
+        <NavLink to="/">
           <NavigationItem>
             <ListIcon size={36} color={theme.colors.gr400} />
-            <NavigationTitle>메인</NavigationTitle>
+            <NavigationTitle>챌린지 목록</NavigationTitle>
           </NavigationItem>
-        </Link>
-        <Link to="/feed">
+        </NavLink>
+        <NavLink to="/feed">
           <NavigationItem>
             <FeedIcon size={36} color={theme.colors.gr400} />
             <NavigationTitle>오늘의 다짐</NavigationTitle>
           </NavigationItem>
-        </Link>
-        <Link to="/challenge-list">
+        </NavLink>
+        <NavLink to="/create-challenge">
           <NavigationItem>
             <AddIcon size={36} color={theme.colors.gr400} />
-            <NavigationTitle>챌린지 목록</NavigationTitle>
+            <NavigationTitle>챌린지 생성</NavigationTitle>
           </NavigationItem>
-        </Link>
-        <Link to="/mypage">
+        </NavLink>
+        <NavLink to="/mypage">
           <NavigationItem>
             <MyPageIcon size={36} color={theme.colors.gr400} />
             <NavigationTitle>내 정보</NavigationTitle>
           </NavigationItem>
-        </Link>
+        </NavLink>
       </NavigationContainer>
       <Spacer />
     </>
@@ -81,20 +81,18 @@ const NavigationItem = styled.div`
   align-items: center;
   cursor: pointer;
 
-  &:nth-child(n) {
-    color: ${({ theme }) => theme.colors.gr500};
+  &:hover > {
+  }
+
+  &:hover > p {
+    color: ${({ theme }) => theme.colors.bl500};
   }
 `;
 
-const NavigationIcon = styled.div`
-  width: 48px;
-  height: 48px;
-`;
-
-const NavigationTitle = styled.div`
+const NavigationTitle = styled.p`
   font-size: ${({ theme }) => theme.fonts.size.small};
   text-align: center;
-  padding-top: 0.5rem;
+  margin-top: 1rem;
 `;
 
 const Spacer = styled.div`
