@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: ${({ theme }) => theme.fonts.weight.bold};
     word-spacing: .05rem;
     text-align: center;
-    margin: 1.5rem auto 3rem;
+    margin: 1.5rem auto 3.2rem;
   }
 
   h3 {

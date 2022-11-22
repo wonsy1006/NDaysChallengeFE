@@ -6,53 +6,19 @@ import Button from '../components/common/Button';
 import LoginForm from '../components/features/login/LoginForm';
 
 const Login = () => {
-  const [userData, setUserData] = useState({
-    email: '',
-    password: '',
-  });
-
-  const onChange = (event) => {
-    const { name, value } = event.target;
-    setUserData({
-      ...userData,
-      [name]: value,
-    });
-  };
-
   return (
     <>
       <h2>로그인</h2>
-      {/* <StyledForm>
-        <StyledDiv>
-          <StyledLabel>이메일</StyledLabel>
-          <StyledInput
-            name="email"
-            value={userData.email}
-            type="text"
-            placeholder="abcde1234@gmail.com"
-            onChange={onChange}
-          />
-        </StyledDiv>
-        <StyledDiv>
-          <StyledLabel>비밀번호</StyledLabel>
-          <StyledInput
-            name="password"
-            type="password"
-            value={userData.password}
-            placeholder="8-12자의 영어, 숫자 입력"
-            onChange={onChange}
-          />
-        </StyledDiv>
-        <ButtonContainer>
-          <Button primary>로그인</Button>
-        </ButtonContainer>
-      </StyledForm> */}
       <LoginForm />
-      <StyledP>또는</StyledP>
+      <Separator>
+        <StyledHr />
+        <Or>또는</Or>
+      </Separator>
       <ButtonContainer>
         <Button sub>카카오로 로그인</Button>
       </ButtonContainer>
       <RegisterContainer>
+        <RegisterText>아직 계정이 없으신가요?</RegisterText>
         <Link to="/register">
           <Register>회원가입</Register>
         </Link>
@@ -63,41 +29,32 @@ const Login = () => {
 
 export default Login;
 
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-`;
-
-const StyledDiv = styled.div`
-  display: flex;
-  flex-direction: column;
+const Separator = styled.div`
+  display: block;
+  position: relative;
   width: 90%;
-  margin: 0 auto 1.5rem;
+  margin: 1.6rem auto;
 `;
 
-const StyledInput = styled.input`
-  font-size: 1rem;
-  border: 1px solid ${({ theme }) => theme.colors.gr300};
-  border-radius: 3rem;
-  padding: 0.75rem 1.25rem;
+const StyledHr = styled.hr`
   width: 100%;
-  &:focus {
-    outline: none;
-    border: 1px solid ${({ theme }) => theme.colors.bl500};
-    color: ${({ theme }) => theme.colors.bl500};
-  }
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 `;
 
-const StyledLabel = styled.label`
-  font-size: 1rem;
-  width: 100%;
-  margin-bottom: 0.5rem;
-`;
+const Or = styled.p`
+  display: block;
+  padding: 1.2rem;
+  margin: 0.8rem auto;
+  position: absolute;
 
-const StyledP = styled.p`
-  display: flex;
-  justify-content: center;
-  margin: 0.5rem auto;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: ${({ theme }) => theme.colors.ye50};
+  color: ${({ theme }) => theme.colors.gr400};
+  font-size: ${({ theme }) => theme.fonts.size.small};
 `;
 
 const ButtonContainer = styled.div`
@@ -110,15 +67,31 @@ const ButtonContainer = styled.div`
 
 const RegisterContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 90%;
-  margin: 2rem auto;
+  margin: 3.2rem auto;
 `;
 
-const Register = styled.a`
-  font-size: 1rem;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.bl500};
-  color: ${({ theme }) => theme.colors.bl500};
+const Register = styled.span`
+  padding: 0.4rem;
+  font-size: ${({ theme }) => theme.fonts.size.normal};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.gr400};
+  color: ${({ theme }) => theme.colors.gr400};
   cursor: pointer;
+
+  &:hover {
+    border-bottom: 1px solid ${({ theme }) => theme.colors.gr500};
+    color: ${({ theme }) => theme.colors.gr500};
+  }
+`;
+
+const RegisterText = styled.p`
+  display: flex;
+  justify-content: center;
+  margin: 1.2rem auto;
+
+  color: ${({ theme }) => theme.colors.gr400};
+  font-size: ${({ theme }) => theme.fonts.size.small};
 `;

@@ -8,8 +8,8 @@ export const InputLabel = (props) => {
   return <StyledLabel>{props.label}</StyledLabel>;
 };
 
-export const TextInput = () => {
-  return <StyledInput />;
+export const TextInput = (props) => {
+  return <StyledInput type={props.type} {...props} />;
 };
 
 export const SearchInput = (props) => {
@@ -45,19 +45,19 @@ export const InputWrapper = styled.div`
 `;
 
 const StyledLabel = styled.label`
-  display: inline-block;
+  display: block;
   font-size: 1.6rem;
-  width: 100%;
-  margin-bottom: 1rem;
+  width: 90%;
+  margin: 0 auto 1rem;
 `;
 
-const StyledInput = styled.input`
+export const StyledInput = styled.input`
   font-size: 1.6rem;
   border: 1px solid ${({ theme }) => theme.colors.gr300};
   border-radius: 4.8rem;
   padding: 1.2rem 2rem;
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto 1.6rem;
   &:focus {
     outline: none;
     border: 1px solid ${({ theme }) => theme.colors.bl500};

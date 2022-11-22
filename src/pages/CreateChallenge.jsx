@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Button from '../components/common/Button';
 import { QuestionIcon } from '../components/common/Icon';
 import { todayDate } from '../utils/Date';
+import CreateChallengeForm from '../components/features/createChallenge/CreateChallengeForm';
 
 const CreateChallenge = () => {
   const [challengeData, setChallengeData] = useState({
@@ -24,8 +25,9 @@ const CreateChallenge = () => {
 
   return (
     <>
-      <h2>챌린지 만들기</h2>
-      <StyledForm>
+      <h2>챌린지 생성</h2>
+      <CreateChallengeForm></CreateChallengeForm>
+      {/* <StyledForm>
         <StyledDiv>
           <StyledLabel>챌린지 유형</StyledLabel>
           <RadioContainer>
@@ -111,8 +113,8 @@ const CreateChallenge = () => {
         </StyledDiv>
 
         {/* 설정 / 미설정 선택에 따라 number input 표시하기 / 가리기 */}
-        {/* 양의 정수 이외의 value는 입력 못 하게 하기 */}
-        <StyledDiv>
+      {/* 양의 정수 이외의 value는 입력 못 하게 하기 */}
+      {/* <StyledDiv>
           <StyledLabel>
             패스 횟수
             <QuestionIcon size={20} />
@@ -129,15 +131,15 @@ const CreateChallenge = () => {
         </StyledDiv>
 
         {/* 설정 / 미설정 선택에 따라 text input 표시하기 / 가리기 */}
-        {/* 보상 설정 제한 텍스트 길이 넘어갈 경우 에러 메세지 표시 */}
-        <StyledDiv>
+      {/* 보상 설정 제한 텍스트 길이 넘어갈 경우 에러 메세지 표시 */}
+      {/* <StyledDiv>
           <StyledLabel>보상 설정</StyledLabel>
           <StyledInput type="text" onChange={onChange} />
         </StyledDiv>
         <ButtonContainer>
           <Button primary>챌린지 만들기</Button>
         </ButtonContainer>
-      </StyledForm>
+      </StyledForm> */}
     </>
   );
 };

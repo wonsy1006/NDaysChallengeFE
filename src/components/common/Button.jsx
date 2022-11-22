@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Button = (props) => <StyledButton {...props} />;
+const Button = (props) => <StyledButton type="submit" {...props} />;
 
 export default Button;
 
