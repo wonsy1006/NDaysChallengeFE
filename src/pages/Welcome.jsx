@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from '../../node_modules/react-router-dom/dist/index';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from '../components/common/Button';
 

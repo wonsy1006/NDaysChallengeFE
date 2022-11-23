@@ -42,10 +42,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h3 {
-    font-size: ${({ theme }) => theme.fonts.size.h3};
+    font-size: ${({ theme }) => theme.fonts.size.h4};
     font-weight: ${({ theme }) => theme.fonts.weight.bold};
     word-spacing: .05rem;
-    margin: 1.5rem 0 1.5rem;
+    width: 90%;
+    margin: 1.5rem auto 1.5rem;
   }
 
   p {

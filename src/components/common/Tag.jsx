@@ -6,13 +6,13 @@ const Tag = (props) => <StyledTag {...props} />;
 export default Tag;
 
 const StyledTag = styled.span`
-  padding: 0.375rem 1rem;
-  border-radius: 0.5rem;
+  padding: 0.6rem 1.6rem;
+  border-radius: 0.8rem;
   font-family: ${({ theme }) => theme.fonts.family.accent};
-  font-size: 0.875rem;
+  font-size: ${({ theme }) => theme.fonts.size.small};
   background: ${({ theme }) => theme.colors.gr400};
   color: #fff;
-  margin-right: 0.5rem;
+  margin-right: 0.8rem;
 
   ${(props) =>
     props.routine &&

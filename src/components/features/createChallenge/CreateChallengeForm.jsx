@@ -27,7 +27,7 @@ const CreateChallengeForm = () => {
 
   return (
     <StyledForm onSubmit={handleSubmit(submitForm)}>
-      <ColumnWrapper>
+      <ColumnWrapper margin="0 auto 2.4rem auto">
         <InputLabel label="챌린지 유형" />
         <RadioWrapper>
           <Radio
@@ -47,14 +47,14 @@ const CreateChallengeForm = () => {
           <RadioLabel htmlFor="group">단체</RadioLabel>
         </RadioWrapper>
       </ColumnWrapper>
-      <ColumnWrapper>
+      <ColumnWrapper margin="0 auto 2.4rem auto">
         <InputLabel label="챌린지 이름" />
         <StyledInput
           {...register('challengeTitle', { required: true })}
           type="text"
         />
       </ColumnWrapper>
-      <ColumnWrapper>
+      <ColumnWrapper margin="0 auto 2.4rem auto">
         <InputLabel label="챌린지 카테고리" />
         <Select {...register('challengeCategory', { required: true })}>
           <Option value="">카테고리를 선택하세요</Option>
@@ -65,7 +65,7 @@ const CreateChallengeForm = () => {
           <Option value="etc">기타</Option>
         </Select>
       </ColumnWrapper>
-      <ColumnWrapper>
+      <ColumnWrapper margin="0 auto 2.4rem auto">
         <InputLabel label="챌린지 기간" />
         <RadioWrapper>
           <Radio
@@ -92,14 +92,14 @@ const CreateChallengeForm = () => {
           <RadioLabel htmlFor="60days">60일</RadioLabel>
         </RadioWrapper>
       </ColumnWrapper>
-      <ColumnWrapper>
+      <ColumnWrapper margin="0 auto 2.4rem auto">
         <InputLabel label="시작일 선택" />
         <StyledInput
           {...register('challengeStartDate', { required: true })}
           type="date"
         />
       </ColumnWrapper>
-      <ColumnWrapper>
+      <ColumnWrapper margin="0 auto 2.4rem auto">
         <InputLabel label="패스 횟수 설정" />
         <RadioWrapper>
           <Radio
@@ -130,7 +130,7 @@ const CreateChallengeForm = () => {
           />
         ) : null}
       </ColumnWrapper>
-      <ColumnWrapper>
+      <ColumnWrapper margin="0 auto 2.4rem auto">
         <InputLabel label="보상 설정" />
         <RadioWrapper>
           <Radio

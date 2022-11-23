@@ -1,9 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import Pic1 from '../assets/images/profile_pics/pic1.svg';
-import Card from '../components/common/Card';
-import Tag from '../components/common/Tag';
-import { Link } from '../../node_modules/react-router-dom/dist/index';
+import ChallengeListItem from '../components/features/challengeList/ChallengeListItem';
+
+const challengeData = {
+  id: '',
+  title: '',
+  tag: '',
+  startDate: '',
+  endDate: '',
+};
 
 const ChallengeList = () => {
   return (
@@ -15,62 +21,16 @@ const ChallengeList = () => {
           <span>님의 챌린지</span>
         </NicknameContainer>
       </UserContainer>
-      <ListContainer>
-        <IndividualContainer>
-          <StyledH3>개인 챌린지</StyledH3>
-          <Card>
-            <TagContainer>
-              <Tag routine>규칙적인 생활</Tag>
-            </TagContainer>
-            <ChallengeTitle>챌린지 이름을 입력하세요</ChallengeTitle>
-            <RightContainer>
-              <ChallengePeriod>2022.11.08 - 2022.11.30</ChallengePeriod>
-              {/* <Link to="/challenge-detail"> */}
-              <DetailLink>상세 보기</DetailLink>
-              {/* </Link> */}
-            </RightContainer>
-          </Card>
-          <Card>
-            <ChallengeTitle>챌린지 이름을 입력하세요</ChallengeTitle>
-            <RightContainer>
-              <ChallengePeriod>2022.11.08 - 2022.11.30</ChallengePeriod>
-              {/* <Link to="/challenge-detail"> */}
-              <DetailLink>상세 보기</DetailLink>
-              {/* </Link> */}
-            </RightContainer>
-          </Card>
-          <Card>
-            <ChallengeTitle>챌린지 이름을 입력하세요</ChallengeTitle>
-            <RightContainer>
-              <ChallengePeriod>2022.11.08 - 2022.11.30</ChallengePeriod>
-              {/* <Link to="/challenge-detail"> */}
-              <DetailLink>상세 보기</DetailLink>
-              {/* </Link> */}
-            </RightContainer>
-          </Card>
-        </IndividualContainer>
-        <GroupContainer>
-          <StyledH3>단체 챌린지</StyledH3>
-          <Card>
-            <ChallengeTitle>챌린지 이름을 입력하세요</ChallengeTitle>
-            <RightContainer>
-              <ChallengePeriod>2022.11.08 - 2022.11.30</ChallengePeriod>
-              {/* <Link to="/challenge-detail"> */}
-              <DetailLink>상세 보기</DetailLink>
-              {/* </Link> */}
-            </RightContainer>
-          </Card>
-          <Card>
-            <ChallengeTitle>챌린지 이름을 입력하세요</ChallengeTitle>
-            <RightContainer>
-              <ChallengePeriod>2022.11.08 - 2022.11.30</ChallengePeriod>
-              {/* <Link to="/challenge-detail"> */}
-              <DetailLink>상세 보기</DetailLink>
-              {/* </Link> */}
-            </RightContainer>
-          </Card>
-        </GroupContainer>
-      </ListContainer>
+      <ListSection>
+        <IndividualSection>
+          <h3>개인 챌린지</h3>
+          <ChallengeListItem />
+        </IndividualSection>
+        <GroupSection>
+          <h3>단체 챌린지</h3>
+          <ChallengeListItem />
+        </GroupSection>
+      </ListSection>
     </>
   );
 };
@@ -99,52 +59,12 @@ const NicknameSpan = styled.span`
   font-weight: 700;
 `;
 
-const ListContainer = styled.div`
+const ListSection = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
 `;
 
-const IndividualContainer = styled.div``;
+const IndividualSection = styled.section``;
 
-const GroupContainer = styled.div``;
-
-const StyledH3 = styled.h3`
-  margin-left: 1.2rem;
-`;
-
-const TagContainer = styled.div`
-  display: flex;
-  justify-content: start;
-  width: 95%;
-  margin: 0 auto;
-`;
-
-const ChallengeTitle = styled.p`
-  font-size: 1.1rem;
-  font-weight: 600;
-  width: 95%;
-  text-align: left;
-`;
-
-const RightContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: 100%;
-`;
-
-const ChallengePeriod = styled.span`
-  font-size: 0.75rem;
-  text-align: right;
-  margin-bottom: 1rem;
-`;
-
-const DetailLink = styled.span`
-  font-size: 0.9rem;
-  text-align: center;
-  width: 60px;
-  color: ${({ theme }) => theme.colors.bl500};
-  padding-bottom: 0.25rem;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.bl500};
-`;
+const GroupSection = styled.section``;
