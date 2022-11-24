@@ -1,55 +1,68 @@
 import React from 'react';
 import Card from '../../common/Card';
+import styled from 'styled-components';
+import Pic1 from '../../../assets/images/profile_pics/pic1.svg';
+import { ColumnWrapper, RowWrapper } from '../../common/Wrapper';
+import {
+  Like,
+  Cheer,
+  Touched,
+  Watch,
+  Surprised,
+} from '../../common/Interaction';
 
 const FeedItem = () => {
   return (
     <Card>
-      <ReportContainer>
-        <Ellipsis style={{ cursor: 'pointer' }} />
-      </ReportContainer>
       <UserContainer>
-        {user.profilePic}
-        {user.nickname}
-        <span>님이 다짐을 공유했습니다.</span>
+        <Pic1 />
+        <NicknameContainer>
+          <NicknameSpan>OOOOO</NicknameSpan>
+          <span>님이 다짐을 공유했습니다.</span>
+        </NicknameContainer>
       </UserContainer>
-      <DajimContainer>{dajimContent}</DajimContainer>
-      <InteractionContainer>
-        <HeartContainer>
-          <Heart />
-          <HeartCount>2</HeartCount>
-        </HeartContainer>
-        <CommentContainer onClick={showCommentForm()}>
-          <Comment />
-          <CommentCount>2</CommentCount>
-        </CommentContainer>
-      </InteractionContainer>
-      <CommentArea>
-        <CommentList>
-          <UserContainer>
-            <Pic1 />
-            <NicknameContainer>
-              <NicknameSpan>XXXXX</NicknameSpan>
-            </NicknameContainer>
-          </UserContainer>
-        </CommentList>
-        <InputContainer>
-          <CommentInput
-            type="text"
-            placeholder="댓글을 입력하세요"
-            onChange={onChangeComment}
-          />{' '}
-          <Enter
-            style={{
-              cursor: 'pointer',
-              position: 'absolute',
-              right: '1rem',
-              top: '.6rem',
-            }}
-          />
-        </InputContainer>
-      </CommentArea>
+      <DajimWrapper>열심히 코딩</DajimWrapper>
+      <InteractionWrapper>
+        <Like />
+        <Cheer />
+        <Touched />
+        <Watch />
+        <Surprised />
+      </InteractionWrapper>
     </Card>
   );
 };
 
 export default FeedItem;
+
+const UserContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 95%;
+  margin: 1rem auto;
+`;
+
+const NicknameContainer = styled.span`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 0.5rem;
+`;
+
+const NicknameSpan = styled.span`
+  color: ${({ theme }) => theme.colors.bl500};
+  font-size: 1.5rem;
+  font-weight: 700;
+`;
+
+const DajimWrapper = styled.p`
+  padding: 1rem 0 1rem 0;
+  margin: 1rem auto 1rem;
+  font-family: ${({ theme }) => theme.fonts.family.accent};
+  font-size: 2rem;
+  color: ${({ theme }) => theme.colors.bl500};
+`;
+
+const InteractionWrapper = styled(RowWrapper)``;
