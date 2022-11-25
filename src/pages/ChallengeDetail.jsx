@@ -62,7 +62,7 @@ const ChallengeDetail = () => {
           챌린지 삭제하기
         </RemoveChallenge>
       </ColumnWrapper>
-      <ColumnWrapper id="invite">
+      <ColumnWrapper id="invite" margin="3.2rem 0">
         <h3>친구 초대하기</h3>
         <InviteIconsWrapper width="100%" margin="0 auto">
           <TwitterIcon size={48} />

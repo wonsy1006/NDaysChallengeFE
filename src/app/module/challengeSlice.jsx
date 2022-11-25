@@ -1,15 +1,33 @@
-import { createSlice } from '../../../node_modules/@reduxjs/toolkit/dist/createSlice';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
-  category: '',
-  title: '',
-  period: '',
+  message: '',
+  errorMessage: '',
+  data: [],
 };
 
-const challengeListSlice = createSlice({
-  name: 'challengeList',
+// 개인 리스트 조회 (최신순 - 챌린지 생성일 기준)
+
+// 단체 리스트 조회 (최신순 - 챌린지 생성일 기준)
+export const getChallengeList = createAsyncThunk(
+  'challenge/getChallengeList',
+  async (name, thunkAPI) => {
+    try {
+      const response = await axios(url);
+
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue('something went wrong');
+    }
+  },
+);
+
+const challengeSlice = createSlice({
+  name: 'challenge',
   initialState,
   reducers: {
-    getChallenge: (state, action) => initialState,
+    removeChallenge: (state) => {
+      state.challenge;
+    },
   },
 });

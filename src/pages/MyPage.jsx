@@ -6,7 +6,7 @@ import Pic1 from '../assets/images/profile_pics/pic1.svg';
 const MyPage = () => {
   return (
     <>
-      <PageTitle>내 정보</PageTitle>
+      <h2>내 정보</h2>
       <UserNameContainer>
         <Pic1 />
         <StyledSpan>username 님</StyledSpan>

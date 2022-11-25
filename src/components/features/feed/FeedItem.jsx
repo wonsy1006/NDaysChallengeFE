@@ -9,6 +9,7 @@ import {
   Touched,
   Watch,
   Surprised,
+  Interaction,
 } from '../../common/Interaction';
 
 const FeedItem = () => {
@@ -28,6 +29,7 @@ const FeedItem = () => {
         <Touched />
         <Watch />
         <Surprised />
+        {/* <Interaction type="like" /> */}
       </InteractionWrapper>
     </Card>
   );
@@ -59,10 +61,15 @@ const NicknameSpan = styled.span`
 
 const DajimWrapper = styled.p`
   padding: 1rem 0 1rem 0;
-  margin: 1rem auto 1rem;
+  margin: 1rem auto 2.4rem;
   font-family: ${({ theme }) => theme.fonts.family.accent};
   font-size: 2rem;
   color: ${({ theme }) => theme.colors.bl500};
 `;
 
-const InteractionWrapper = styled(RowWrapper)``;
+const InteractionWrapper = styled(RowWrapper)`
+  width: 95%;
+  gap: 1rem;
+  flex-grow: 1;
+  flex-wrap: wrap;
+`;

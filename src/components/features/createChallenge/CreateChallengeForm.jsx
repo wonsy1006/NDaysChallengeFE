@@ -35,7 +35,7 @@ const CreateChallengeForm = () => {
             type="radio"
             value="individual"
             id="individual"
-            checked
+            defaultChecked
           />
           <RadioLabel htmlFor="individual">개인</RadioLabel>
           <Radio
@@ -73,7 +73,7 @@ const CreateChallengeForm = () => {
             type="radio"
             value="14days"
             id="14days"
-            checked
+            defaultChecked
           />
           <RadioLabel htmlFor="14days">14일</RadioLabel>
           <Radio
@@ -107,7 +107,7 @@ const CreateChallengeForm = () => {
             type="radio"
             value="unsetPass"
             id="unsetPass"
-            checked
+            defaultChecked
           />
           <RadioLabel htmlFor="unsetPass" onClick={onPassClick}>
             미설정
@@ -138,7 +138,7 @@ const CreateChallengeForm = () => {
             type="radio"
             value="unsetReward"
             id="unsetReward"
-            checked
+            defaultChecked
           />
           <RadioLabel htmlFor="unsetReward" onClick={onRewardClick}>
             미설정
@@ -175,6 +175,7 @@ export default CreateChallengeForm;
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
+  margin: 3.2rem 0;
 `;
 
 const RadioWrapper = styled.div`

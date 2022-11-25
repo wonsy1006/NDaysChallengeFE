@@ -1,17 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Pic1 from '../assets/images/profile_pics/pic1.svg';
 import ChallengeListItem from '../components/features/challengeList/ChallengeListItem';
 
-const challengeData = {
-  id: '',
-  title: '',
-  tag: '',
-  startDate: '',
-  endDate: '',
-};
+const challengeData = [
+  {
+    id: '1',
+    title: '챌린지 테스트 1',
+    categoryTag: 'routine',
+    typeTag: 'individual',
+    startDate: '2022-11-25',
+    endDate: '2022-12-05',
+    detailUrl: '/challenge-detail',
+  },
+  {
+    id: '1',
+    title: '',
+    categoryTag: 'routine',
+    typeTag: 'individual',
+    startDate: '2022-11-25',
+    endDate: '2022-12-05',
+    detailUrl: '/challenge-detail',
+  },
+];
 
 const ChallengeList = () => {
+  const [data, setData] = useState('');
+
+  const sendData = () => {
+    setData(challengeData);
+  };
+
   return (
     <>
       <UserContainer>
@@ -22,11 +41,11 @@ const ChallengeList = () => {
         </NicknameContainer>
       </UserContainer>
       <ListSection>
-        <IndividualSection>
+        <IndividualSection id="individualChallenge">
           <h3>개인 챌린지</h3>
-          <ChallengeListItem />
+          <ChallengeListItem data={data} sendData={sendData} />
         </IndividualSection>
-        <GroupSection>
+        <GroupSection id="groupChallenge">
           <h3>단체 챌린지</h3>
           <ChallengeListItem />
         </GroupSection>

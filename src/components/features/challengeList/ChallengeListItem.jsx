@@ -5,12 +5,14 @@ import Card from '../../common/Card';
 import Tag from '../../common/Tag';
 import { ColumnWrapper, RowWrapper } from '../../common/Wrapper';
 
-const ChallengeListItem = (props) => {
+const ChallengeListItem = (data) => {
+  console.log(data);
+
   return (
     <Card>
       <ColumnWrapper>
         <RowWrapper margin=".5rem">
-          <Tag routine>props.tag</Tag>
+          <Tag routine></Tag>
         </RowWrapper>
         <RowWrapper margin=".5rem">
           <ChallengeTitle>props.challengeTitle</ChallengeTitle>

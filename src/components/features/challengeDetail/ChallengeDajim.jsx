@@ -1,19 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ChallengeDajimForm from './ChallengeDajimForm';
 import Card from '../../common/Card';
 import { WriteIcon, ArrowUpIcon } from '../../common/Icon';
 import { ColumnWrapper } from '../../common/Wrapper';
 
-// WriteIcon 클릭 시 다짐 입력 input 표시
-
 const ChallengeDajim = () => {
+  // WriteIcon 클릭 시 다짐 입력 input 표시
+  const [editMode, setEditMode] = useState(false);
+
   return (
     <Card>
       <DajimTitle>✨ 오늘의 다짐</DajimTitle>
       <IconWrapper>
-        <WriteIcon size={20} />
-        {/* <ArrowUpIcon size={20} /> */}
+        {editMode ? <ArrowUpIcon size={20} /> : <WriteIcon size={20} />}
       </IconWrapper>
       <DajimContent>하루종일 코딩하는 중</DajimContent>
       {/* <ChallengeDajimForm /> */}

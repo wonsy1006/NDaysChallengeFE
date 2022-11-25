@@ -34,14 +34,8 @@ const Main = () => {
       </Card>
       <Link to="/login">로그인</Link>
       <Link to="/register">회원가입</Link>
-      <Link to="/report">신고하기</Link>
       <Link to="/fdwerw">에러 페이지</Link>
       <Link to="/welcome">웰컴</Link>
-      {/* <Checkbox label="체크박스 스타일링"></Checkbox>
-      <Tag>규칙적인 생활</Tag> */}
-      <InputLabel type="비밀번호" />
-      <SearchInput />
-      <EnterInput />
     </div>
   );
 };
