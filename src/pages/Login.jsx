@@ -17,12 +17,10 @@ const Login = () => {
       <ButtonContainer>
         <Button sub>카카오로 로그인</Button>
       </ButtonContainer>
-      <RegisterContainer>
-        <RegisterText>아직 계정이 없으신가요?</RegisterText>
-        <Link to="/register">
-          <Register>회원가입</Register>
-        </Link>
-      </RegisterContainer>
+      <SignUpContainer>
+        <SignUpText>아직 계정이 없으신가요?</SignUpText>
+        <SignUpLink to="/signup">회원가입</SignUpLink>
+      </SignUpContainer>
     </>
   );
 };
@@ -65,7 +63,7 @@ const ButtonContainer = styled.div`
   margin: 0 auto;
 `;
 
-const RegisterContainer = styled.div`
+const SignUpContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,7 +72,7 @@ const RegisterContainer = styled.div`
   margin: 3.2rem auto;
 `;
 
-const Register = styled.span`
+const SignUpLink = styled(Link)`
   padding: 0.4rem;
   font-size: ${({ theme }) => theme.fonts.size.normal};
   border-bottom: 1px solid ${({ theme }) => theme.colors.gr400};
@@ -87,7 +85,7 @@ const Register = styled.span`
   }
 `;
 
-const RegisterText = styled.p`
+const SignUpText = styled.p`
   display: flex;
   justify-content: center;
   margin: 1.2rem auto;

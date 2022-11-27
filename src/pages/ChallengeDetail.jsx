@@ -1,10 +1,12 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import ChallengeDajim from '../components/features/challengeDetail/ChallengeDajim';
 import ChallengeReward from '../components/features/challengeDetail/ChallengeReward';
 import ChallengeStamp from '../components/features/challengeDetail/ChallengeStamp';
+import ChallengeModal from '../components/features/challengeDetail/ChallengeModal';
+import Invite from '../components/features/invite/Invite';
 import { ColumnWrapper, RowWrapper } from '../components/common/Wrapper';
-import Modal from '../components/common/Modal';
 import Pic1 from '../assets/images/profile_pics/pic1.svg';
 import Tag from '../components/common/Tag';
 import {
@@ -28,13 +30,17 @@ const removeChallenge = () => {
 };
 
 const ChallengeDetail = () => {
+  const { isOpen } = useSelector((store) => store.modal);
+  const dispatch = useDispatch();
+
   return (
     <>
+      {isOpen && <ChallengeModal />}
       <UserContainer>
         <Pic1 />
         <NicknameContainer>
           <NicknameSpan>OOOOO</NicknameSpan>
-          <span>님의</span>
+          <span>님의 챌린지</span>
         </NicknameContainer>
       </UserContainer>
       <ChallengeTitle>홍제천에서 1만보 걷기</ChallengeTitle>
@@ -62,15 +68,7 @@ const ChallengeDetail = () => {
           챌린지 삭제하기
         </RemoveChallenge>
       </ColumnWrapper>
-      <ColumnWrapper id="invite" margin="3.2rem 0">
-        <h3>친구 초대하기</h3>
-        <InviteIconsWrapper width="100%" margin="0 auto">
-          <TwitterIcon size={48} />
-          <KakaotalkIcon size={48} />
-          <InstagramIcon size={48} />
-          <FacebookIcon size={48} />
-        </InviteIconsWrapper>
-      </ColumnWrapper>
+      <Invite />
     </>
   );
 };
@@ -137,15 +135,4 @@ const RemoveChallenge = styled.a`
   border-bottom: 1px solid ${({ theme }) => theme.colors.rd};
   color: ${({ theme }) => theme.colors.rd};
   cursor: pointer;
-`;
-
-const InviteIconsWrapper = styled(RowWrapper)`
-  justify-content: space-around;
-  gap: 1rem;
-  flex-wrap: nowrap;
-  margin: 1rem auto;
-
-  & > * {
-    cursor: pointer;
-  }
 `;

@@ -4,7 +4,7 @@ import {
   Routes,
   Route,
   Navigate,
-} from '../../node_modules/react-router-dom/dist/index';
+} from 'react-router-dom';
 
 import ChallengeDetail from '../pages/ChallengeDetail';
 import ChallengeList from '../pages/ChallengeList';
@@ -18,7 +18,7 @@ import Login from '../pages/Login';
 import Main from '../pages/Main';
 import MyPage from '../pages/MyPage';
 import Onboarding from '../pages/Onboarding';
-import Register from '../pages/Register';
+import SignUp from '../pages/SignUp';
 import Welcome from '../pages/Welcome';
 import Withdraw from '../pages/Withdraw';
 import Report from '../pages/Report';
@@ -61,7 +61,7 @@ const Router = () => {
       <Route path="/friends-list" element={<FriendsList />} />
       <Route path="/group-challenge" element={<GroupChallenge />} />
       <Route path="/mypage" element={<MyPage />} />
-      <Route path="/register" element={<Register />} />
+      <Route path="/signup" element={<SignUp />} />
       <Route path="/welcome" element={<Welcome />} />
       <Route path="/withdraw" element={<Withdraw />} />
       <Route path="/report" element={<Report />} />

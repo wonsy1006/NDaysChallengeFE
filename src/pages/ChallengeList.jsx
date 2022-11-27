@@ -14,7 +14,7 @@ const challengeData = [
     detailUrl: '/challenge-detail',
   },
   {
-    id: '1',
+    id: '2',
     title: '',
     categoryTag: 'routine',
     typeTag: 'individual',
@@ -25,7 +25,7 @@ const challengeData = [
 ];
 
 const ChallengeList = () => {
-  const [data, setData] = useState('');
+  const [data, setData] = useState(challengeData);
 
   const sendData = () => {
     setData(challengeData);

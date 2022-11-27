@@ -47,7 +47,7 @@ const HeaderContainer = styled.div`
   height: 8rem;
   padding: 2.4rem 1.6rem;
   margin-bottom: 1.6rem;
-  z-index: 1000;
+  z-index: 100;
 
   background-color: #fffbf2;
 

@@ -20,6 +20,8 @@ const SignUpForm = () => {
     console.log(data);
   };
 
+  const postFormData = (data) => {};
+
   return (
     <StyledForm onSubmit={handleSubmit(submitForm)}>
       <ColumnWrapper>

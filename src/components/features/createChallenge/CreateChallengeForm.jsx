@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 import styled from 'styled-components';
 import { ColumnWrapper } from '../../common/Wrapper';
 import { InputLabel, StyledInput } from '../../common/Input';
@@ -7,7 +9,20 @@ import { ArrowDownIcon } from '../../common/Icon';
 import Button from '../../common/Button';
 
 const CreateChallengeForm = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema) });
+
+  const schema = yup.object().shape({
+    challengeType: yup.string().required('챌린지 유형을 선택해 주세요'),
+    challengeTitle: yup.string().required('챌린지 제목을 입력해 주세요'),
+    challengeCategory: yup.string().required('챌린지 카테고리를 선택해 주세요'),
+    challengePeriod: yup.string().required('챌린지 기간을 선택해 주세요'),
+    challengeStartDate: yup.date().required('챌린지 시작일을 선택해 주세요'),
+  });
+
   const [data, setData] = useState('');
 
   const submitForm = (data) => {

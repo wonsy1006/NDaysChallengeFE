@@ -1,4 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+const url = 'http://localhost:8080';
 
 const initialState = {
   message: '',
@@ -30,4 +33,5 @@ const challengeSlice = createSlice({
       state.challenge;
     },
   },
+  extraReducers: {},
 });
