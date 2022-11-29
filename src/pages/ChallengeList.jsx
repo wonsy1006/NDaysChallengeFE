@@ -1,35 +1,50 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Card from '../components/common/Card';
+import Button from '../components/common/Button';
+import NoChallenge from '../assets/images/noChallenge.svg';
 import Pic1 from '../assets/images/profile_pics/pic1.svg';
 import ChallengeListItem from '../components/features/challengeList/ChallengeListItem';
 
-const challengeData = [
-  {
-    id: '1',
-    title: '챌린지 테스트 1',
-    categoryTag: 'routine',
-    typeTag: 'individual',
-    startDate: '2022-11-25',
-    endDate: '2022-12-05',
-    detailUrl: '/challenge-detail',
-  },
-  {
-    id: '2',
-    title: '',
-    categoryTag: 'routine',
-    typeTag: 'individual',
-    startDate: '2022-11-25',
-    endDate: '2022-12-05',
-    detailUrl: '/challenge-detail',
-  },
-];
-
 const ChallengeList = () => {
-  const [data, setData] = useState(challengeData);
+  const { challenges, message, errorMessage } = useSelector(
+    (state) => state.challenge,
+  );
 
-  const sendData = () => {
-    setData(challengeData);
+  const isIndividual = (element) => {
+    if (element.type === 'individual') {
+      return true;
+    }
   };
+  const individuals = challenges.filter(isIndividual);
+
+  console.log(individuals.length);
+
+  if (challenges.length === 0) {
+    return (
+      <div>
+        <UserNameContainer>
+          <Pic1 />
+          <StyledSpan>OOOOO 님</StyledSpan>
+          <span>의 챌린지</span>
+        </UserNameContainer>
+        <Card>
+          <NoChallenge></NoChallenge>
+          <StyledText>
+            아직 챌린지를 만들지 않으셨군요? <br />
+            새로운 챌린지를 만들어 보세요!
+          </StyledText>
+          <ButtonContainer>
+            <Link to="/create-challenge">
+              <Button primary>챌린지 만들기</Button>
+            </Link>
+          </ButtonContainer>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -43,11 +58,12 @@ const ChallengeList = () => {
       <ListSection>
         <IndividualSection id="individualChallenge">
           <h3>개인 챌린지</h3>
-          <ChallengeListItem data={data} sendData={sendData} />
+          {challenges.map((challenge) => {
+            return <ChallengeListItem key={challenge.id} {...challenge} />;
+          })}
         </IndividualSection>
         <GroupSection id="groupChallenge">
           <h3>단체 챌린지</h3>
-          <ChallengeListItem />
         </GroupSection>
       </ListSection>
     </>
@@ -87,3 +103,37 @@ const ListSection = styled.section`
 const IndividualSection = styled.section``;
 
 const GroupSection = styled.section``;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+const StyledText = styled.p`
+  margin: 1rem auto 0.5rem auto;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+`;
+
+const UserNameContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  width: 90%;
+  margin: 0 auto 1rem auto;
+
+  & + & {
+    margin: 0.5rem;
+  }
+`;
+
+const StyledSpan = styled.span`
+  margin: 0 0.5rem 0 1rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.colors.bl500};
+`;

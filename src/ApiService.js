@@ -34,9 +34,9 @@ export function call(api, method, request) {
     });
 }
 
-export function signIn(userDTO) {
-  return call('/auth/signIn', 'POST', userDTO).then((response) => {
-    console.log('response: ', response);
-    alert('로그인 토큰: ' + response.token);
-  });
-}
+// export function signIn(userDTO) {
+//   return call('/auth/signIn', 'POST', userDTO).then((response) => {
+//     console.log('response: ', response);
+//     alert('로그인 토큰: ' + response.token);
+//   });
+// }

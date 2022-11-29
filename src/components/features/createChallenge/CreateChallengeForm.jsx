@@ -9,6 +9,8 @@ import { ArrowDownIcon } from '../../common/Icon';
 import Button from '../../common/Button';
 
 const CreateChallengeForm = () => {
+  // 개인 챌린지 5개 이상일 경우 챌린지 유형 개인 버튼 비활성화
+
   const {
     register,
     handleSubmit,
@@ -21,6 +23,8 @@ const CreateChallengeForm = () => {
     challengeCategory: yup.string().required('챌린지 카테고리를 선택해 주세요'),
     challengePeriod: yup.string().required('챌린지 기간을 선택해 주세요'),
     challengeStartDate: yup.date().required('챌린지 시작일을 선택해 주세요'),
+    challengePassCount: yup.number(),
+    challengeReward: yup.string(),
   });
 
   const [data, setData] = useState('');
@@ -30,15 +34,12 @@ const CreateChallengeForm = () => {
     console.log(data);
   };
 
-  // 패스 횟수 input, 보상 input toggle
+  const [startDate, setStartDate] = useState('');
+  const getStartDate = (date) => {};
+
+  const [showGroupInput, setShowGroupInput] = useState(false);
   const [showPassInput, setShowPassInput] = useState(false);
   const [showRewardInput, setShowRewardInput] = useState(false);
-  const onPassClick = () => {
-    setShowPassInput(!showPassInput);
-  };
-  const onRewardClick = () => {
-    setShowRewardInput(!showRewardInput);
-  };
 
   return (
     <StyledForm onSubmit={handleSubmit(submitForm)}>
@@ -115,6 +116,15 @@ const CreateChallengeForm = () => {
         />
       </ColumnWrapper>
       <ColumnWrapper margin="0 auto 2.4rem auto">
+        <InputLabel label="종료일" />
+        <StyledInput
+          {...register('challengeEndDate', { required: true })}
+          type="date"
+          disabled
+          defaultValue={data.challengeStartDate}
+        />
+      </ColumnWrapper>
+      <ColumnWrapper margin="0 auto 2.4rem auto">
         <InputLabel label="패스 횟수 설정" />
         <RadioWrapper>
           <Radio
@@ -124,7 +134,12 @@ const CreateChallengeForm = () => {
             id="unsetPass"
             defaultChecked
           />
-          <RadioLabel htmlFor="unsetPass" onClick={onPassClick}>
+          <RadioLabel
+            htmlFor="unsetPass"
+            onClick={() => {
+              setShowPassInput(false);
+            }}
+          >
             미설정
           </RadioLabel>
           <Radio
@@ -133,7 +148,12 @@ const CreateChallengeForm = () => {
             value="setPass"
             id="setPass"
           />
-          <RadioLabel htmlFor="setPass" onClick={onPassClick}>
+          <RadioLabel
+            htmlFor="setPass"
+            onClick={() => {
+              setShowPassInput(true);
+            }}
+          >
             설정
           </RadioLabel>
         </RadioWrapper>
@@ -155,7 +175,12 @@ const CreateChallengeForm = () => {
             id="unsetReward"
             defaultChecked
           />
-          <RadioLabel htmlFor="unsetReward" onClick={onRewardClick}>
+          <RadioLabel
+            htmlFor="unsetReward"
+            onClick={() => {
+              setShowRewardInput(false);
+            }}
+          >
             미설정
           </RadioLabel>
           <Radio
@@ -164,7 +189,12 @@ const CreateChallengeForm = () => {
             value="setReward"
             id="setReward"
           />
-          <RadioLabel htmlFor="setReward" onClick={onRewardClick}>
+          <RadioLabel
+            htmlFor="setReward"
+            onClick={() => {
+              setShowRewardInput(true);
+            }}
+          >
             설정
           </RadioLabel>
         </RadioWrapper>

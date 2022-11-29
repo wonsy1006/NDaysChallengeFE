@@ -1,15 +1,18 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { openModal } from '../../../app/module/modalSlice';
 import styled from 'styled-components';
 import Card from '../../common/Card';
 import Stamp from '../../common/Stamp';
-import Modal from '../../common/Modal';
 
 const ChallengeStamp = () => {
+  const dispatch = useDispatch();
+
   return (
     <Card>
       <StampTitle>✔️ 챌린지 진척도</StampTitle>
       <StampArea>
-        <Stamp unchecked day="01" />
+        <Stamp unchecked day="01" onClick={() => dispatch(openModal())} />
         <Stamp success day="02" />
         <Stamp pass day="03" />
         <Stamp fail day="04" />

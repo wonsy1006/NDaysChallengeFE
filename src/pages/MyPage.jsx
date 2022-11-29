@@ -1,9 +1,17 @@
 import React from 'react';
-import { Link } from '../../node_modules/react-router-dom/dist/index';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Pic1 from '../assets/images/profile_pics/pic1.svg';
 
 const MyPage = () => {
+  const navigate = useNavigate();
+
+  const logout = () => {
+    window.localStorage.removeItem('token');
+    navigate('/');
+  };
+
   return (
     <>
       <h2>내 정보</h2>
@@ -26,7 +34,7 @@ const MyPage = () => {
         </Link>
       </PagesContainer>
       <LogoutContainer>
-        <StyledLink>로그아웃</StyledLink>
+        <StyledLink onClick={logout()}>로그아웃</StyledLink>
       </LogoutContainer>
     </>
   );
@@ -76,7 +84,7 @@ const LogoutContainer = styled.div`
   justify-content: center;
 `;
 
-const StyledLink = styled.a`
+const StyledLink = styled(Link)`
   color: ${({ theme }) => theme.colors.bl500};
   padding-bottom: 0.5rem;
   border-bottom: 1px solid ${({ theme }) => theme.colors.bl500};

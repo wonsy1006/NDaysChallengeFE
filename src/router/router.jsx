@@ -6,6 +6,7 @@ import {
   Navigate,
 } from 'react-router-dom';
 
+import ProtectedRoute from './ProtectedRoute';
 import ChallengeDetail from '../pages/ChallengeDetail';
 import ChallengeList from '../pages/ChallengeList';
 import ChallengeResult from '../pages/ChallengeResult';
@@ -28,7 +29,7 @@ import GroupChallenge from '../pages/GroupChallenge';
 const FirstPage = ({ children }) => {
   if (
     window.localStorage.getItem('firstAccess') === null &&
-    window.localStorage.getItem('token') === null
+    window.localStorage.getItem('userToken') === null
   ) {
     return <Navigate to="/welcome" />;
   }
@@ -49,22 +50,24 @@ const Router = () => {
           </FirstPage>
         }
       />
+      <Route element={<ProtectedRoute />}>
+        <Route path="/challenge-list" element={<ChallengeList />} />
+        <Route path="/challenge-detail" element={<ChallengeDetail />} />
+        <Route path="/challenge-result" element={<ChallengeResult />} />
+        <Route path="/create-challenge" element={<CreateChallenge />} />
+        <Route path="/edit-profile" element={<EditProfile />} />
+        <Route path="/feed" element={<Feed />} />
+        <Route path="/friends-list" element={<FriendsList />} />
+        <Route path="/group-challenge" element={<GroupChallenge />} />
+        <Route path="/mypage" element={<MyPage />} />
+        <Route path="/withdraw" element={<Withdraw />} />
+        <Route path="/report" element={<Report />} />
+      </Route>
       <Route path="/onboarding" element={<Onboarding />} />
-      <Route path="/challenge-list" element={<ChallengeList />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/challenge-detail" element={<ChallengeDetail />} />
-      <Route path="/challenge-result" element={<ChallengeResult />} />
-      <Route path="/create-challenge" element={<CreateChallenge />} />
-      <Route path="/edit-profile" element={<EditProfile />} />
       <Route path="/*" element={<ErrorPage />} />
-      <Route path="/feed" element={<Feed />} />
-      <Route path="/friends-list" element={<FriendsList />} />
-      <Route path="/group-challenge" element={<GroupChallenge />} />
-      <Route path="/mypage" element={<MyPage />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/welcome" element={<Welcome />} />
-      <Route path="/withdraw" element={<Withdraw />} />
-      <Route path="/report" element={<Report />} />
     </Routes>
     // </BrowserRouter>
   );

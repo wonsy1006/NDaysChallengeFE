@@ -5,21 +5,19 @@ import Card from '../../common/Card';
 import Tag from '../../common/Tag';
 import { ColumnWrapper, RowWrapper } from '../../common/Wrapper';
 
-const ChallengeListItem = (data) => {
-  console.log(data);
-
+const ChallengeListItem = ({ id, title, category, startDate }) => {
   return (
     <Card>
       <ColumnWrapper>
         <RowWrapper margin=".5rem">
-          <Tag routine></Tag>
+          <Tag routine>{category}</Tag>
         </RowWrapper>
         <RowWrapper margin=".5rem">
-          <ChallengeTitle>props.challengeTitle</ChallengeTitle>
+          <ChallengeTitle>{title}</ChallengeTitle>
         </RowWrapper>
         <RowWrapper justifyContent="flex-end">
           <ChallengePeriod>
-            <StartDate>2022.xx.xx</StartDate>
+            <StartDate>{startDate}</StartDate>
             <span> - </span>
             <EndDate>2022.xx.xx</EndDate>
           </ChallengePeriod>

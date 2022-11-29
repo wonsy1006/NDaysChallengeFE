@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from '../../../node_modules/react-router-dom/dist/index';
 import Logo from '../../assets/images/logo.svg';
 
 import { FriendIcon } from './Icon';
+import { getUserDetails } from '../../app/module/userSlice';
 
 // 친구 요청 있을 시, 아이콘 바꾸기
 
 const Header = () => {
+  const { userInfo, userToken } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (userToken) {
+      dispatch(getUserDetails());
+    }
+  }, [userToken, dispatch]);
+
   const [hasFriendRequest, setHasFriendRequest] = useState(false);
 
   return (

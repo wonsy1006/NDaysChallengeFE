@@ -1,10 +1,13 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeModal } from '../../../app/module/modalSlice';
 import styled from 'styled-components';
 import { RowWrapper } from '../../common/Wrapper';
 import Button from '../../common/Button';
 import { CloseIcon } from '../../common/Icon';
 
 const ChallengeModal = () => {
+  const dispatch = useDispatch();
   return (
     <ModalContainer>
       <Modal>
@@ -19,10 +22,28 @@ const ChallengeModal = () => {
           남은 패스 : <LeftPass>3</LeftPass> 회
         </PassWrapper>
         <ButtonWrapper>
-          <Button sub>패스 사용하기</Button>
-          <Button primary>도전 성공</Button>
+          <Button
+            sub
+            onClick={() => {
+              dispatch(closeModal());
+            }}
+          >
+            패스 사용하기
+          </Button>
+          <Button
+            primary
+            onClick={() => {
+              dispatch(closeModal());
+            }}
+          >
+            도전 성공
+          </Button>
         </ButtonWrapper>
-        <CloseWrapper>
+        <CloseWrapper
+          onClick={() => {
+            dispatch(closeModal());
+          }}
+        >
           <CloseIcon size={20} />
         </CloseWrapper>
       </Modal>
@@ -106,4 +127,5 @@ const CloseWrapper = styled.div`
   right: 0;
   top: 0.5rem;
   padding: 1.2rem 1.6rem;
+  cursor: pointer;
 `;

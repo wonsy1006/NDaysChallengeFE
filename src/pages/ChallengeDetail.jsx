@@ -16,22 +16,11 @@ import {
   FacebookIcon,
 } from '../components/common/Icon';
 
-const challenge = [
-  {
-    id: 1,
-    title: '타이틀을 입력해 보세요',
-    categoryTag: 'routine',
-    typeTag: 'individual',
-  },
-];
-
-const removeChallenge = () => {
-  // 삭제 확인 모달 띄우기
-};
-
 const ChallengeDetail = () => {
   const { isOpen } = useSelector((store) => store.modal);
   const dispatch = useDispatch();
+
+  const removeChallenge = () => {};
 
   return (
     <>

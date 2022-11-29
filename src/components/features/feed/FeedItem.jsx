@@ -10,7 +10,7 @@ import {
   Watch,
   Surprised,
   Interaction,
-} from '../../common/Interaction';
+} from '../../common/Sticker';
 
 const FeedItem = () => {
   return (

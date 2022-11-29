@@ -1,18 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { userLogin } from '../../../app/module/userSlice';
 import styled from 'styled-components';
 import { ColumnWrapper } from '../../common/Wrapper';
 import { InputLabel, StyledInput } from '../../common/Input';
 import Button from '../../common/Button';
 
 const LoginForm = () => {
-  const { register, handleSubmit } = useForm();
+  const { loading, userInfo, error } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { register, resetField, handleSubmit } = useForm();
   const [data, setData] = useState('');
 
   const submitForm = (data) => {
     setData(JSON.stringify(data));
     console.log(data);
+
+    dispatch(userLogin(data));
+
+    resetField('email');
+    resetField('password');
   };
+
+  // useEffect(() => {
+  //   if (userInfo) {
+  //     navigate('/challenge-list');
+  //   }
+  // }, [navigate, userInfo]);
 
   return (
     <StyledForm onSubmit={handleSubmit(submitForm)}>

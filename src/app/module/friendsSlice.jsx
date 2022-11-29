@@ -5,3 +5,11 @@ const initialState = {
   errorMessage: '',
   data: [],
 };
+
+const friendsSlice = createSlice({
+  name: 'friends',
+  initialState,
+  reducers: {},
+});
+
+export default friendsSlice.reducer;

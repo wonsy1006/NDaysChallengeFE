@@ -1,14 +1,11 @@
 import React from 'react';
-import { Link } from '../../node_modules/react-router-dom/dist/index';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Button from '../components/common/Button';
 import Card from '../components/common/Card';
-import Pic1 from '../assets/images/profile_pics/pic1.svg';
+import Button from '../components/common/Button';
 import NoChallenge from '../assets/images/noChallenge.svg';
 
-const onChange = () => {};
-
-const Main = () => {
+const NoChallengeList = () => {
   return (
     <div>
       <UserNameContainer>
@@ -32,7 +29,7 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default NoChallengeList;
 
 const ButtonContainer = styled.div`
   display: flex;

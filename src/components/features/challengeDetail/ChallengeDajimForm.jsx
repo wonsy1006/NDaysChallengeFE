@@ -5,13 +5,19 @@ import { StyledInput, InputLabel } from '../../common/Input';
 import { ColumnWrapper, RowWrapper } from '../../common/Wrapper';
 import Button from '../../common/Button';
 
-const ChallengeDajimForm = () => {
-  const { register, handleSubmit } = useForm();
+const ChallengeDajimForm = ({ getBackToEditMode, getDajimContent }) => {
+  const { register, resetField, handleSubmit } = useForm();
   const [data, setData] = useState('');
 
   const submitForm = (data) => {
     setData(JSON.stringify(data));
-    console.log(data);
+    console.log(data.dajimContent);
+
+    resetField('openRange');
+    resetField('dajimContent');
+
+    getDajimContent(data.dajimContent);
+    getBackToEditMode(false);
   };
 
   return (
@@ -24,7 +30,7 @@ const ChallengeDajimForm = () => {
             type="radio"
             value="public"
             id="public"
-            checked
+            defaultChecked
           />
           <RadioLabel htmlFor="public">전체 공개</RadioLabel>
           <Radio
@@ -62,6 +68,7 @@ const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin: 1.6rem auto;
 `;
 
 const DajimFormLabel = styled(InputLabel)`
