@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --hot",
-    "build": "Webpack .",
+    "build": "webpack",
     "test": "test"
   },
   "keywords": [],
