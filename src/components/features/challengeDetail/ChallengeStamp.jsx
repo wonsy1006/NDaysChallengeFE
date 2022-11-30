@@ -7,6 +7,9 @@ import Stamp from '../../common/Stamp';
 
 const ChallengeStamp = () => {
   const dispatch = useDispatch();
+  const { challenges, message, errorMessage } = useSelector(
+    (state) => state.challenge,
+  );
 
   return (
     <Card>

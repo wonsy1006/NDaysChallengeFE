@@ -17,30 +17,22 @@ const Navigation = () => {
   return (
     <>
       <NavigationContainer>
-        <NavLink to="/">
-          <NavigationItem>
-            <ListIcon size={36} color={theme.colors.gr400} />
-            <NavigationTitle>챌린지 목록</NavigationTitle>
-          </NavigationItem>
-        </NavLink>
-        <NavLink to="/feed">
-          <NavigationItem>
-            <FeedIcon size={36} color={theme.colors.gr400} />
-            <NavigationTitle>오늘의 다짐</NavigationTitle>
-          </NavigationItem>
-        </NavLink>
-        <NavLink to="/create-challenge">
-          <NavigationItem>
-            <AddIcon size={36} color={theme.colors.gr400} />
-            <NavigationTitle>챌린지 생성</NavigationTitle>
-          </NavigationItem>
-        </NavLink>
-        <NavLink to="/mypage">
-          <NavigationItem>
-            <MyPageIcon size={36} color={theme.colors.gr400} />
-            <NavigationTitle>내 정보</NavigationTitle>
-          </NavigationItem>
-        </NavLink>
+        <StyledNavLink activeclassname="active" to="/">
+          <ListIcon size={36} color={theme.colors.gr400} />
+          <NavigationTitle>챌린지 목록</NavigationTitle>
+        </StyledNavLink>
+        <StyledNavLink activeclassname="active" to="/feed">
+          <FeedIcon size={36} color={theme.colors.gr400} />
+          <NavigationTitle>오늘의 다짐</NavigationTitle>
+        </StyledNavLink>
+        <StyledNavLink activeclassname="active" to="/create-challenge">
+          <AddIcon size={36} color={theme.colors.gr400} />
+          <NavigationTitle>챌린지 생성</NavigationTitle>
+        </StyledNavLink>
+        <StyledNavLink activeclassname="active" to="/mypage">
+          <MyPageIcon size={36} color={theme.colors.gr400} />
+          <NavigationTitle>내 정보</NavigationTitle>
+        </StyledNavLink>
       </NavigationContainer>
       <Spacer />
     </>
@@ -75,22 +67,15 @@ const NavigationContainer = styled.div`
   }
 `;
 
-const NavigationItem = styled.div`
+const StyledNavLink = styled(NavLink)`
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-
-  &:hover > {
-  }
-
-  &:hover > p {
-    color: ${({ theme }) => theme.colors.bl500};
-  }
 `;
 
 const NavigationTitle = styled.p`
-  font-size: ${({ theme }) => theme.fonts.size.small};
+  font-size: ${({ theme }) => theme.fonts.size.nav};
   text-align: center;
   margin-top: 1rem;
 `;

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { SearchIcon, EnterIcon } from './Icon';
+import { RowWrapper } from './Wrapper';
 
 // 각 페이지 기존 Input 이 컴포넌트로 교체
 
@@ -14,12 +15,12 @@ export const TextInput = (props) => {
 
 export const SearchInput = (props) => {
   return (
-    <InputWrapper>
+    <RowWrapper width="90%" margin="1rem auto 2.4rem" alignItems="center">
       <StyledInput />
       <IconWrapper>
         <SearchIcon size={28} onClick={props.onClick} />
       </IconWrapper>
-    </InputWrapper>
+    </RowWrapper>
   );
 };
 
@@ -57,7 +58,7 @@ export const StyledInput = styled.input`
   border-radius: 4.8rem;
   padding: 1.2rem 2rem;
   width: 90%;
-  margin: 0 auto 1.6rem;
+  margin: 0 auto;
   &:focus {
     outline: none;
     border: 1px solid ${({ theme }) => theme.colors.bl500};
@@ -66,14 +67,11 @@ export const StyledInput = styled.input`
 `;
 
 const IconWrapper = styled.div`
-  display: inline-block;
-  width: 2.8rem;
-  height: 2.8rem;
-  position: absolute;
-  right: 4rem;
-  top: 50%;
-  transform: translateY(-50%);
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
   &:hover {
     cursor: pointer;
   }

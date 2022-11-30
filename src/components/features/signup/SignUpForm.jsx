@@ -4,20 +4,31 @@ import styled from 'styled-components';
 import { ColumnWrapper } from '../../common/Wrapper';
 import { InputLabel, StyledInput } from '../../common/Input';
 import Button from '../../common/Button';
-import Pic1 from '../../../assets/images/profile_pics/pic1.svg';
-import Pic2 from '../../../assets/images/profile_pics/pic2.svg';
-import Pic3 from '../../../assets/images/profile_pics/pic3.svg';
-import Pic4 from '../../../assets/images/profile_pics/pic4.svg';
-import Pic5 from '../../../assets/images/profile_pics/pic5.svg';
-import Pic6 from '../../../assets/images/profile_pics/pic6.svg';
+import ProfilePic from '../../common/ProfilePic';
+import axios from '../../../../node_modules/axios/index';
 
 const SignUpForm = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const [data, setData] = useState('');
 
   const submitForm = (data) => {
     setData(JSON.stringify(data));
     console.log(data);
+
+    axios
+      .post('http://localhost:8080/api/signUp', data, {
+        headers: { 'Content-Type': 'application/json' },
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error.data);
+      });
   };
 
   const postFormData = (data) => {};
@@ -50,7 +61,7 @@ const SignUpForm = () => {
             id="pic1"
           />
           <ProfileLabel htmlFor="pic1">
-            <Pic1 />
+            <ProfilePic picType="pic1" />
           </ProfileLabel>
           <Radio
             {...register('profilePic')}
@@ -59,7 +70,7 @@ const SignUpForm = () => {
             id="pic2"
           />
           <ProfileLabel htmlFor="pic2">
-            <Pic2 />
+            <ProfilePic picType="pic2" />
           </ProfileLabel>
           <Radio
             {...register('profilePic')}
@@ -68,7 +79,7 @@ const SignUpForm = () => {
             id="pic3"
           />
           <ProfileLabel htmlFor="pic3">
-            <Pic3 />
+            <ProfilePic picType="pic3" />
           </ProfileLabel>
           <Radio
             {...register('profilePic')}
@@ -77,7 +88,7 @@ const SignUpForm = () => {
             id="pic4"
           />
           <ProfileLabel htmlFor="pic4">
-            <Pic4 />
+            <ProfilePic picType="pic4" />
           </ProfileLabel>
           <Radio
             {...register('profilePic')}
@@ -86,7 +97,7 @@ const SignUpForm = () => {
             id="pic5"
           />
           <ProfileLabel htmlFor="pic5">
-            <Pic5 />
+            <ProfilePic picType="pic5" />
           </ProfileLabel>
           <Radio
             {...register('profilePic')}
@@ -95,7 +106,7 @@ const SignUpForm = () => {
             id="pic6"
           />
           <ProfileLabel htmlFor="pic6">
-            <Pic6 />
+            <ProfilePic picType="pic6" />
           </ProfileLabel>
         </RadioWrapper>
       </ColumnWrapper>

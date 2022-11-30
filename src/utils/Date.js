@@ -4,5 +4,3 @@ const month = date.getMonth() + 1;
 const day = date.getDate();
 
 const todayDate = `${year}.${month}.${day}`;
-
-console.log(todayDate);

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
 import { StyledInput, InputLabel } from '../../common/Input';
@@ -11,10 +12,21 @@ const ChallengeDajimForm = ({ getBackToEditMode, getDajimContent }) => {
 
   const submitForm = (data) => {
     setData(JSON.stringify(data));
-    console.log(data.dajimContent);
+    console.log(data);
 
     resetField('openRange');
     resetField('dajimContent');
+
+    // axios
+    //   .post('http://localhost:8080/api/dajim', data, {
+    //     headers: { 'Content-Type': 'application/json' },
+    //   })
+    //   .then((response) => {
+    //     console.log(response.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error.data);
+    //   });
 
     getDajimContent(data.dajimContent);
     getBackToEditMode(false);

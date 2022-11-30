@@ -7,7 +7,11 @@ import Button from '../../common/Button';
 import { CloseIcon } from '../../common/Icon';
 
 const ChallengeModal = () => {
+  const { challenges, message, errorMessage } = useSelector(
+    (state) => state.challenge,
+  );
   const dispatch = useDispatch();
+
   return (
     <ModalContainer>
       <Modal>
@@ -19,7 +23,7 @@ const ChallengeModal = () => {
           <br /> 성공하셨나요?
         </ModalText>
         <PassWrapper>
-          남은 패스 : <LeftPass>3</LeftPass> 회
+          남은 패스 : <LeftPass></LeftPass> 회
         </PassWrapper>
         <ButtonWrapper>
           <Button

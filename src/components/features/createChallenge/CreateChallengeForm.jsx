@@ -7,6 +7,7 @@ import { ColumnWrapper } from '../../common/Wrapper';
 import { InputLabel, StyledInput } from '../../common/Input';
 import { ArrowDownIcon } from '../../common/Icon';
 import Button from '../../common/Button';
+import axios from '../../../../node_modules/axios/index';
 
 const CreateChallengeForm = () => {
   // 개인 챌린지 5개 이상일 경우 챌린지 유형 개인 버튼 비활성화
@@ -32,6 +33,17 @@ const CreateChallengeForm = () => {
   const submitForm = (data) => {
     setData(JSON.stringify(data));
     console.log(data);
+
+    axios
+      .post('http://localhost:8080/api/signUp', data, {
+        headers: { 'Content-Type': 'application/json' },
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error.data);
+      });
   };
 
   const [startDate, setStartDate] = useState('');

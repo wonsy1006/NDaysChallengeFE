@@ -24,6 +24,7 @@ const fonts = {
     normal: '1.6rem',
     small: '1.2rem',
     extraSmall: '.8rem',
+    nav: '.9rem',
   },
   weight: {
     light: 100,

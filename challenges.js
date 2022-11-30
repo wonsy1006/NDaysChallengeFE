@@ -8,6 +8,9 @@ const challenges = [
     startDate: '2022.11.25',
     reward: '24시간 잠자기',
     pass: 3,
+    status: 'ongoing',
+    dajimOpen: '',
+    dajimContent: '',
   },
   {
     id: 2,
@@ -18,6 +21,7 @@ const challenges = [
     startDate: '2022.11.25',
     reward: '아이패드',
     pass: 4,
+    status: 'success',
   },
   {
     id: 3,
@@ -28,6 +32,7 @@ const challenges = [
     startDate: '2022.11.25',
     reward: '맥북 프로',
     pass: 5,
+    status: 'ongoing',
   },
   {
     id: 4,
@@ -38,6 +43,7 @@ const challenges = [
     startDate: '2022.11.25',
     reward: '애플워치',
     pass: 2,
+    status: 'fail',
   },
 ];
 
